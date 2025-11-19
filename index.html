@@ -15,6 +15,31 @@
     font-family: Helvetica Neue, Arial, sans-serif;
     height: var(--app-height);
   }
+  
+  /* Intro fade */
+  #intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 1; /* iniziale visibile */
+    transition: opacity 1.5s ease; /* aggiunta transizione per fade-out */
+  }
+
+  #intro-text {
+    font-family: Helvetica Neue, Arial, sans-serif;
+    font-size: 1em;
+    color: #000;
+    text-align: center;
+    opacity: 0; /* parte invisibile */
+    transition: opacity 1.5s ease; /* fade-in e fade-out */
+  }
 
   /* ================= DESKTOP ================= */
   .layout {
@@ -192,6 +217,10 @@
 </head>
 
 <body>
+<!-- Intro Fade -->
+<div id="intro">
+  <div id="intro-text">samuelesilvestriarchitetto</div>
+</div>
 
 <div class="layout">
 
@@ -212,7 +241,7 @@
       <img src="images/4.jpg" class="slide vertical" alt="4">
       <img src="images/5.jpg" class="slide vertical" alt="5">
       <img src="images/6.jpg" class="slide vertical" alt="6">
-      <img src="images/7.JPG" class="slide horizontal" alt="7">
+      <img src="images/7.jpg" class="slide horizontal" alt="7">
       <img src="images/8.jpg" class="slide vertical" alt="8">
       <img src="images/9.jpg" class="slide vertical" alt="9">
       <img src="images/10.jpg" class="slide vertical" alt="10">
@@ -277,9 +306,9 @@
     `Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025<br>fotografie di Laura Guerra`,
     `Casa AD<br>Appartamento<br>Via Malmusi, Modena, Italia<br>2025<br>con Arch. Renato Righi`,
     `Casa AD<br>Appartamento<br>Via Malmusi, Modena, Italia<br>2025<br>con Arch. Renato Righi`,
-    `Alberi<br>Gioiello<br>2022<br> `,
-    `Alberi<br>Gioiello<br>2022<br> `,
-    `Alberi<br>Gioiello<br>2022<br> `,
+    `Alberi<br>Gioiello<br>2022`,
+    `Alberi<br>Gioiello<br>2022`,
+    `Alberi<br>Gioiello<br>2022`,
     `Spazio Persona<br>Concorso<br>Corso Matteotti, Fano, Italia<br>2025`,
     `Spazio Persona<br>Concorso<br>Corso Matteotti, Fano, Italia<br>2025`,
     `Casa CM<br>Appartamento<br>Via Fusco, Modena, Italia<br>2022`,
@@ -321,12 +350,38 @@
   }
 
   showSlide(0);
-  setInterval(nextSlide, 4000);
+  setTimeout(() => {
+   setInterval(nextSlide, 4000); // le slide successive durano 4s
+}, 4500); // la prima slide dura 6s
+;
 
   slides.forEach(slide => {
     slide.addEventListener('contextmenu', e => e.preventDefault());
   });
 </script>
+<script>
+  window.addEventListener('load', () => {
+  const intro = document.getElementById('intro');
+  const text = document.getElementById('intro-text');
+
+  // FADE IN del testo
+  setTimeout(() => {
+    text.style.opacity = '1';
+  }, 100);
+
+  // FADE OUT del testo + sfondo dopo 2.5 secondi
+  setTimeout(() => {
+    text.style.opacity = '0';    // testo sfuma
+    intro.style.opacity = '0';   // sfondo sfuma gradualmente
+  }, 2600);
+
+  // Rimuove completamente il div dopo la transizione
+  setTimeout(() => {
+    intro.style.display = 'none';
+  }, 4200); // 2600 + 1.5s transizione = 4100ms, arrotondato
+});
+</script>
+
 
 </body>
 </html>
