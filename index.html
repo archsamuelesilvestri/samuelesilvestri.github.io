@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samuele Silvestri Architetto</title>
+<meta name="description" content="Samuele Silvestri, Architetto, Modena. Contatti: arch.samuelesilvestri@gmail.com">
+<link rel="icon" href="images/logo.png" type="image/png">
+
+
+<style>
+  body {
+    margin: 0;
+    background: #fff;
+    font-family: Helvetica Neue, Arial, sans-serif;
+    height: var(--app-height);
+  }
+
+  /* ================= DESKTOP ================= */
+  .layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    height: var(--app-height);
+    overflow: hidden;
+  }
+
+  .side-column {
+    padding: 40px 40px;
+    box-sizing: border-box;
+    font-size: 12px;
+    color: #666;
+    text-align: left;
+  }
+
+  .counter {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .caption {
+    font-size: 10pt;
+    color: rgba(0,0,0,0.5);
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .slideshow-wrapper {
+    position: relative;
+    padding: 40px 40px 40px 10px;
+    box-sizing: border-box;
+  }
+
+  .slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.8s ease;
+    object-fit: contain;
+    object-position: right center;
+  }
+
+  .slide.loaded {
+    opacity: 1;
+  }
+
+  .info-box {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    width: 350px;
+    font-size: 10pt;
+    color: rgba(0,0,0,0.5);
+    line-height: 1.4;
+    text-align: left;
+    pointer-events: none;
+  }
+
+  /* Orizzontali desktop: in alto a destra */
+  @media (min-width: 769px) {
+    .slide.horizontal {
+      object-position: right top;
+    }
+  }
+
+  /* ================= MOBILE ================= */
+  @media (max-width: 768px) {
+    body {
+      overflow: hidden;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .layout {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      height: 100%;
+    }
+
+    .side-column {
+      display: none !important;
+    }
+
+    /* Info mobile (dati + didascalie) */
+    .mobile-info-wrapper {
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 18px 18px 18px;
+      pointer-events: none;
+      box-sizing: border-box;
+    }
+
+    .mobile-data {
+      font-size: 12px;
+      line-height: 1.3;
+      max-width: 45%;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    .mobile-data .extra-info {
+      display: none;
+    }
+
+    .mobile-data.expanded .extra-info {
+      display: block;
+    }
+
+    .mobile-caption {
+      font-size: 11px;
+      line-height: 1.3;
+      text-align: right;
+      opacity: 0.75;
+      max-width: 50%;
+    }
+
+    .counter-mobile {
+      font-size: 15px;
+      margin-bottom: 6px;
+      text-align: right;
+    }
+
+    /* Slideshow occupa tutto lo spazio rimanente */
+    .slideshow-wrapper {
+      flex: 1 1 auto;
+      position: relative;
+      padding: 18px;
+    }
+
+    .slideshow {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* IMMAGINI MOBILE */
+    .slide.vertical {
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .slide.horizontal {
+      object-fit: contain;
+      object-position: center top;
+    }
+
+    /* Nasconde info desktop */
+    .info-box {
+      display: none;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .mobile-info-wrapper {
+      display: none;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- COLONNA DESKTOP -->
+  <div class="side-column">
+    <div class="counter" id="counter">1</div>
+    <div class="caption" id="caption"></div>
+  </div>
+
+  <!-- SLIDESHOW -->
+  <div class="slideshow-wrapper">
+    <div class="slideshow" id="slideshow">
+
+      <img src="images/1.jpg" class="slide vertical" alt="1">
+      <img src="images/2.jpg" class="slide horizontal" alt="2">
+      <img src="images/15.jpg" class="slide vertical" alt="15">
+      <img src="images/3.jpg" class="slide vertical" alt="3">
+      <img src="images/4.jpg" class="slide vertical" alt="4">
+      <img src="images/5.jpg" class="slide vertical" alt="5">
+      <img src="images/6.jpg" class="slide vertical" alt="6">
+      <img src="images/7.jpg" class="slide horizontal" alt="7">
+      <img src="images/8.jpg" class="slide vertical" alt="8">
+      <img src="images/9.jpg" class="slide vertical" alt="9">
+      <img src="images/10.jpg" class="slide vertical" alt="10">
+      <img src="images/11a.jpg" class="slide vertical" alt="11a">
+      <img src="images/11.jpg" class="slide vertical" alt="11">
+      <img src="images/12.jpg" class="slide vertical" alt="12">
+      <img src="images/13.jpg" class="slide horizontal" alt="13">
+      <img src="images/14.jpg" class="slide horizontal" alt="14">
+      <img src="images/16.jpg" class="slide horizontal" alt="16">
+
+    </div>
+  </div>
+</div>
+
+<!-- INFO DESKTOP -->
+<div class="info-box">
+  <strong>Samuele Silvestri</strong><br>
+  Architetto<br>
+  Modena, Italia<br>
+  arch.samuelesilvestri@gmail.com<br>
+  +39 366 493 8286
+</div>
+
+<!-- INFO MOBILE -->
+<div class="mobile-info-wrapper">
+  <div class="mobile-data" onclick="this.classList.toggle('expanded')">
+    <strong>Samuele Silvestri</strong><br>
+    Architetto<br>
+    <span class="extra-info">
+      Modena, Italia<br>
+      arch.samuelesilvestri@gmail.com<br>
+      +39 366 493 8286
+    </span>
+  </div>
+
+  <div class="mobile-caption">
+    <div class="counter-mobile" id="counter-mobile">1</div>
+    <div id="caption-mobile"></div>
+  </div>
+</div>
+
+<script>
+  // Adatta l'altezza al viewport reale su mobile
+  function setFullHeight() {
+    const vh = window.innerHeight;
+    document.documentElement.style.setProperty('--app-height', `${vh}px`);
+  }
+  setFullHeight();
+  window.addEventListener('resize', setFullHeight);
+
+  const slides = document.querySelectorAll('.slide');
+  const counter = document.getElementById('counter');
+  const caption = document.getElementById('caption');
+
+  const counterMobile = document.getElementById('counter-mobile');
+  const captionMobile = document.getElementById('caption-mobile');
+
+  const captions = [
+    `Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025<br>fotografie di Laura Guerra`,
+    `Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025<br>fotografie di Laura Guerra`,
+    `Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025<br>fotografie di Laura Guerra`,
+    `Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025<br>fotografie di Laura Guerra`,
+    `Casa AD<br>Appartamento<br>Via Malmusi, Modena, Italia<br>2025<br>con Arch. Renato Righi`,
+    `Casa AD<br>Appartamento<br>Via Malmusi, Modena, Italia<br>2025<br>con Arch. Renato Righi`,
+    `Alberi<br>Gioiello<br>2022`,
+    `Alberi<br>Gioiello<br>2022`,
+    `Alberi<br>Gioiello<br>2022`,
+    `Spazio Persona<br>Concorso<br>Corso Matteotti, Fano, Italia<br>2025`,
+    `Spazio Persona<br>Concorso<br>Corso Matteotti, Fano, Italia<br>2025`,
+    `Casa CM<br>Appartamento<br>Via Fusco, Modena, Italia<br>2022`,
+    `Casa CM<br>Appartamento<br>Via Fusco, Modena, Italia<br>2022`,
+    `Casa CM<br>Appartamento<br>Via Fusco, Modena, Italia<br>2022`,
+    `Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025<br>fotografie di Laura Guerra`,
+    `Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025<br>fotografie di Laura Guerra`,
+    `Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025<br>fotografie di Laura Guerra`
+  ];
+
+  let current = 0;
+
+  function showSlide(i){
+    const img = slides[i];
+    if(img.complete){
+      activateSlide(i);
+    } else {
+      img.onload = () => activateSlide(i);
+    }
+  }
+
+  function activateSlide(i){
+    slides.forEach(s => s.classList.remove('loaded'));
+    slides[i].classList.add('loaded');
+
+    // desktop
+    counter.textContent = i + 1;
+    caption.innerHTML = captions[i];
+
+    // mobile
+    counterMobile.textContent = i + 1;
+    captionMobile.innerHTML = captions[i];
+
+    current = i;
+  }
+
+  function nextSlide(){
+    showSlide((current + 1) % slides.length);
+  }
+
+  showSlide(0);
+  setInterval(nextSlide, 4000);
+
+  slides.forEach(slide => {
+    slide.addEventListener('contextmenu', e => e.preventDefault());
+  });
+</script>
+
+</body>
+</html>
