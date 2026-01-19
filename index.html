@@ -362,13 +362,6 @@
     showSlide((current + 1) % slides.length);
   }
 
-// Aspetta che la prima immagine sia davvero caricata prima di partire
-  slides[0].addEventListener('load', startSlideshow);
-
-  if (slides[0].complete) {
-    startSlideshow();
-  }
-
   function startSlideshow() {
     showSlide(0);
 
@@ -376,6 +369,8 @@
       setInterval(nextSlide, 4000); // 4 secondi le foto dopo la prima
     }, 6000); // la prima resta 6 secondi REALI
   }
+
+  window.addEventListener('load', startSlideshow);
 
   slides.forEach(slide => {
     slide.addEventListener('contextmenu', e => e.preventDefault());
