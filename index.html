@@ -7,22 +7,30 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-FW1ER2Y7QD');
 </script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Samuele Silvestri Architetto</title>
 <meta name="description" content="Samuele Silvestri, Architetto, Modena. Contatti: info@samuelesilvestriarchitetto.com">
 <link rel="icon" href="images/logo.png" type="image/png">
 
-
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    height: 100%;
+  }
+
   body {
     margin: 0;
     background: #fff;
     font-family: Helvetica Neue, Arial, sans-serif;
-    height: var(--app-height);
+    height: var(--app-height, 100vh);
+    display: flex;
+    flex-direction: column;
   }
   
   /* Intro fade */
@@ -37,8 +45,8 @@
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    opacity: 1; /* iniziale visibile */
-    transition: opacity 1.5s ease; /* aggiunta transizione per fade-out */
+    opacity: 1;
+    transition: opacity 1.5s ease;
   }
 
   #intro-text {
@@ -46,16 +54,17 @@
     font-size: 1em;
     color: #000;
     text-align: center;
-    opacity: 0; /* parte invisibile */
-    transition: opacity 1.5s ease; /* fade-in e fade-out */
+    opacity: 0;
+    transition: opacity 1.5s ease;
   }
 
   /* ================= DESKTOP ================= */
   .layout {
     display: grid;
     grid-template-columns: 280px 1fr;
-    height: var(--app-height);
+    height: var(--app-height, 100vh);
     overflow: hidden;
+    flex: 1;
   }
 
   .side-column {
@@ -84,6 +93,8 @@
     position: relative;
     padding: 40px 40px 40px 10px;
     box-sizing: border-box;
+    height: 100%;
+    overflow: hidden;
   }
 
   .slideshow {
@@ -135,13 +146,16 @@
       margin: 0;
       display: flex;
       flex-direction: column;
+      height: var(--app-height, 100vh);
     }
 
     .layout {
       display: flex;
       flex-direction: column;
-      flex: 1 1 auto;
-      height: 100%;
+      flex: 1;
+      height: auto;
+      min-height: 0; /* Important for flex containers */
+      overflow: hidden;
     }
 
     .side-column {
@@ -153,9 +167,11 @@
       flex: 0 0 auto;
       display: flex;
       justify-content: space-between;
-      padding: 0px 18px 18px 18px;
+      padding: 12px 18px;
       pointer-events: none;
       box-sizing: border-box;
+      min-height: auto;
+      gap: 10px;
     }
 
     .mobile-data {
@@ -164,6 +180,7 @@
       max-width: 45%;
       cursor: pointer;
       pointer-events: auto;
+      flex-shrink: 0;
     }
 
     .mobile-data .extra-info {
@@ -180,6 +197,7 @@
       text-align: right;
       opacity: 0.75;
       max-width: 50%;
+      flex-shrink: 0;
     }
 
     .counter-mobile {
@@ -190,25 +208,42 @@
 
     /* Slideshow occupa tutto lo spazio rimanente */
     .slideshow-wrapper {
-      flex: 1 1 auto;
+      flex: 1;
       position: relative;
-      padding: 18px;
+      padding: 12px;
+      min-height: 0;
+      overflow: hidden;
     }
 
     .slideshow {
       width: 100%;
       height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     /* IMMAGINI MOBILE */
+    .slide {
+      position: absolute;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+    }
+
     .slide.vertical {
       object-fit: cover;
-      object-position: center top;
+      object-position: center;
+      max-height: 100%;
+      width: auto;
     }
 
     .slide.horizontal {
       object-fit: contain;
-      object-position: center top;
+      object-position: center;
+      max-width: 100%;
+      height: auto;
     }
 
     /* Nasconde info desktop */
@@ -281,11 +316,11 @@
   lo studio opera oggi a Modena, occupandosi di <br>
   progettazione e ristrutturazione di appartamenti<br> 
   e spazi commerciali. <br><br>  
-  L’attività di architetto a Modena si fonda su un approccio <br> 
+  L'attività di architetto a Modena si fonda su un approccio <br> 
   attento al contesto, alla qualità dello spazio e alle esigenze<br> 
   del cliente. La specializzazione in progettazione in siti storici<br> 
   e contesti UNESCO consente di affrontare ogni intervento <br>
-  con sensibilità e profondo rispetto per l’esistente.<br><br>
+  con sensibilità e profondo rispetto per l'esistente.<br><br>
   <strong>Samuele Silvestri</strong><br>
   Architetto<br>
   Modena, Italia<br>
@@ -312,13 +347,17 @@
 </div>
 
 <script>
-  // Adatta l'altezza al viewport reale su mobile
+  // Adatta l'altezza al viewport reale su mobile (incluso notch/safe areas)
   function setFullHeight() {
     const vh = window.innerHeight;
     document.documentElement.style.setProperty('--app-height', `${vh}px`);
   }
+  
   setFullHeight();
   window.addEventListener('resize', setFullHeight);
+  window.addEventListener('orientationchange', () => {
+    setTimeout(setFullHeight, 100);
+  });
 
   const slides = document.querySelectorAll('.slide');
   const counter = document.getElementById('counter');
@@ -406,17 +445,16 @@
 
   // FADE OUT del testo + sfondo dopo 2.5 secondi
   setTimeout(() => {
-    text.style.opacity = '0';    // testo sfuma
-    intro.style.opacity = '0';   // sfondo sfuma gradualmente
+    text.style.opacity = '0';
+    intro.style.opacity = '0';
   }, 2000);
 
   // Rimuove completamente il div dopo la transizione
   setTimeout(() => {
     intro.style.display = 'none';
-  }, 3500); // 2600 + 1.5s transizione = 4100ms, arrotondato
+  }, 3500);
 });
 </script>
-
 
 </body>
 </html>
