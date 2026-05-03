@@ -211,7 +211,8 @@
     .slideshow-wrapper {
       flex: 1;
       position: relative;
-      padding: 12px;
+      padding: 0;
+      margin: 0;
       min-height: 0;
       overflow: hidden;
     }
@@ -222,17 +223,21 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 12px;
     }
 
-    /* IMMAGINI MOBILE - Fixed for vertical/horizontal */
+    /* IMMAGINI MOBILE - Fixed for vertical/horizontal with equal margins */
     .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
+      position: relative;
+      top: auto;
+      left: auto;
       width: 100%;
       height: 100%;
       opacity: 0;
       transition: opacity 1.8s ease;
+      object-fit: contain;
+      object-position: center center;
+      padding: 12px;
     }
 
     .slide.vertical {
