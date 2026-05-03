@@ -1,298 +1,272 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW1ER2Y7QD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FW1ER2Y7QD');
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samuele Silvestri Architetto | Modena</title>
+  <meta name="description" content="Samuele Silvestri, Architetto a Modena. Progettazione architettonica, ristrutturazioni e interni. Contatti: arch.samuelesilvestri@gmail.com">
+  <link rel="icon" href="images/logo.png" type="image/png">
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW1ER2Y7QD"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-FW1ER2Y7QD');
-</script>
+  <style>
+    :root { --app-height: 100vh; }
+    
+    body {
+      margin: 0;
+      background: #fff;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      height: var(--app-height);
+      overflow: hidden; /* Evita scroll della pagina intera */
+    }
+    
+    /* Intro fade */
+    #intro {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 1.2s ease, visibility 1.2s;
+    }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samuele Silvestri Architetto</title>
-<link rel="icon" href="images/logo.png">
+    #intro-text {
+      font-size: 1.2em;
+      color: #000;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
 
-<style>
+    /* Layout */
+    .layout {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      height: var(--app-height);
+    }
 
-/* BASE */
-body {
-  margin: 0;
-  background: #fff;
-  font-family: Helvetica Neue, Arial, sans-serif;
+    .side-column {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      color: #666;
+    }
 
-  height: 100vh;
-  height: 100dvh;
+    .counter { font-size: 14px; margin-bottom: 15px; color: #000; }
+    .caption { font-size: 10pt; line-height: 1.5; color: rgba(0,0,0,0.6); }
 
-  overflow-x: hidden;
-}
+    .slideshow-wrapper {
+      position: relative;
+      padding: 40px 40px 40px 0;
+    }
 
-/* INTRO */
-#intro {
-  position: fixed;
-  inset: 0;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity 1.5s ease;
-}
+    .slideshow {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
 
-#intro-text {
-  opacity: 0;
-  transition: opacity 1.5s ease;
-}
+    .slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      object-fit: contain;
+      object-position: right center;
+    }
 
-/* LAYOUT */
-.layout {
-  display: grid;
-  grid-template-columns: 280px 1fr;
+    .slide.loaded { opacity: 1; }
 
-  height: 100vh;
-  height: 100dvh;
-}
+    .info-box {
+      position: fixed;
+      bottom: 40px;
+      left: 40px;
+      width: 320px;
+      font-size: 10pt;
+      color: rgba(0,0,0,0.5);
+      line-height: 1.4;
+      pointer-events: none;
+    }
 
-/* SIDEBAR */
-.side-column {
-  padding: 40px;
-  font-size: 12px;
-  color: #666;
-}
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .layout { display: flex; flex-direction: column; }
+      .side-column, .info-box { display: none; }
+      
+      .slideshow-wrapper { flex: 1; padding: 20px; }
+      .slide { object-position: center center; }
 
-.counter {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
+      .mobile-info-wrapper {
+        padding: 0 20px 30px 20px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+      }
+      .mobile-data .extra-info { display: none; margin-top: 5px; }
+      .mobile-data.expanded .extra-info { display: block; }
+      .mobile-caption { text-align: right; max-width: 60%; }
+    }
 
-.caption {
-  font-size: 10pt;
-  color: rgba(0,0,0,0.5);
-  line-height: 1.4;
-}
-
-/* SLIDESHOW */
-.slideshow-wrapper {
-  position: relative;
-  padding: 40px 40px 40px 10px;
-
-  padding-top: calc(40px + env(safe-area-inset-top));
-  padding-bottom: calc(40px + env(safe-area-inset-bottom));
-}
-
-.slideshow {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.slide {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1.5s ease;
-
-  object-fit: contain;
-  object-position: right center;
-}
-
-.slide.active {
-  opacity: 1;
-}
-
-/* INFO DESKTOP */
-.info-box {
-  position: fixed;
-  bottom: calc(40px + env(safe-area-inset-bottom));
-  left: calc(40px + env(safe-area-inset-left));
-  width: 350px;
-  font-size: 10pt;
-  color: rgba(0,0,0,0.5);
-  line-height: 1.4;
-  pointer-events: none;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-.layout {
-  display: flex;
-  flex-direction: column;
-}
-
-.side-column {
-  display: none;
-}
-
-.mobile-info-wrapper {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 18px calc(18px + env(safe-area-inset-bottom)) 18px;
-}
-
-.mobile-data {
-  font-size: 12px;
-  max-width: 45%;
-  cursor: pointer;
-}
-
-.mobile-data .extra {
-  display: none;
-}
-
-.mobile-data.open .extra {
-  display: block;
-}
-
-.mobile-caption {
-  font-size: 11px;
-  text-align: right;
-  opacity: 0.75;
-  max-width: 50%;
-}
-
-.slideshow-wrapper {
-  flex: 1;
-  padding: 18px;
-  padding-top: calc(18px + env(safe-area-inset-top));
-}
-
-.slide.vertical {
-  object-fit: cover;
-}
-
-.slide.horizontal {
-  object-fit: cover;
-}
-
-.info-box {
-  display: none;
-}
-
-}
-
-@media (min-width: 769px) {
-.mobile-info-wrapper {
-  display: none;
-}
-}
-
-</style>
+    @media (min-width: 769px) {
+      .mobile-info-wrapper { display: none; }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- INTRO -->
 <div id="intro">
   <div id="intro-text"><strong>samuelesilvestri</strong>architetto</div>
 </div>
 
 <div class="layout">
-
-<!-- DESKTOP -->
-<div class="side-column">
-  <div class="counter" id="counter"></div>
-  <div class="caption" id="caption"></div>
-</div>
-
-<!-- SLIDES -->
-<div class="slideshow-wrapper">
-<div class="slideshow" id="slideshow">
-
-<img src="images/1.webp" class="slide vertical" data-caption="Anita<br>Bar e ristorante<br>Modena<br>2025">
-<img src="images/2b.webp" class="slide horizontal" data-caption="Anita<br>Bar e ristorante<br>Modena<br>2025">
-<img src="images/15.webp" class="slide vertical" data-caption="Anita<br>Bar e ristorante<br>Modena<br>2025">
-<img src="images/3.webp" class="slide vertical" data-caption="Anita<br>Bar e ristorante<br>Modena<br>2025">
-<img src="images/19.webp" class="slide horizontal" data-caption="Cielo<br>Ceramica<br>2026">
-<img src="images/18.webp" class="slide horizontal" data-caption="Cielo<br>Ceramica<br>2026">
-<img src="images/20.webp" class="slide horizontal" data-caption="Casalgrande<br>Villa<br>2026">
-<img src="images/4.webp" class="slide vertical" data-caption="Casa AD<br>Modena<br>2025">
-<img src="images/5.webp" class="slide vertical" data-caption="Casa AD<br>Modena<br>2025">
-<img src="images/6.webp" class="slide vertical" data-caption="Alberi<br>Titanio<br>2022">
-<img src="images/7.webp" class="slide horizontal" data-caption="Alberi<br>Titanio<br>2022">
-<img src="images/8.webp" class="slide vertical" data-caption="Alberi<br>Titanio<br>2022">
-<img src="images/9.webp" class="slide vertical" data-caption="Spazio Persona<br>Fano<br>2025">
-<img src="images/10.webp" class="slide vertical" data-caption="Spazio Persona<br>Fano<br>2025">
-<img src="images/11a.webp" class="slide vertical" data-caption="Casa CM<br>Modena<br>2022">
-<img src="images/11.webp" class="slide vertical" data-caption="Casa CM<br>Modena<br>2022">
-<img src="images/12.webp" class="slide vertical" data-caption="Casa CM<br>Modena<br>2022">
-<img src="images/13.webp" class="slide horizontal" data-caption="Anita<br>Modena<br>2025">
-<img src="images/14.webp" class="slide horizontal" data-caption="Anita<br>Modena<br>2025">
-<img src="images/16.webp" class="slide horizontal" data-caption="Anita<br>Modena<br>2025">
-
-</div>
-</div>
-</div>
-
-<!-- MOBILE INFO -->
-<div class="mobile-info-wrapper">
-  <div class="mobile-data" onclick="this.classList.toggle('open')">
-    <strong>Samuele Silvestri</strong><br>
-    Architetto
-    <div class="extra">
-      Modena<br>
-      info@samuelesilvestriarchitetto.com
-    </div>
+  <div class="side-column">
+    <div class="counter" id="counter">1 / 20</div>
+    <div class="caption" id="caption"></div>
   </div>
 
+  <div class="slideshow-wrapper">
+    <div class="slideshow" id="slideshow">
+      <!-- Immagini con alt descrittivi per SEO -->
+      <img src="images/1.webp" class="slide" alt="Anita Bar Ristorante Modena">
+      <img src="images/2b.webp" class="slide" alt="Interni Anita Modena">
+      <img src="images/15.webp" class="slide" alt="Progetto Anita">
+      <img src="images/3.webp" class="slide" alt="Dettaglio Anita">
+      <img src="images/19.webp" class="slide" alt="Cielo Ceramica">
+      <img src="images/18.webp" class="slide" alt="Cielo Ceramica Samuele Silvestri">
+      <img src="images/20.webp" class="slide" alt="Villa Reggio Emilia">
+      <img src="images/4.webp" class="slide" alt="Casa AD Modena">
+      <img src="images/5.webp" class="slide" alt="Casa AD Interni">
+      <img src="images/6.webp" class="slide" alt="Alberi Titanio">
+      <img src="images/7.webp" class="slide" alt="Alberi Progetto">
+      <img src="images/8.webp" class="slide" alt="Dettaglio Titanio">
+      <img src="images/9.webp" class="slide" alt="Spazio Persona Fano">
+      <img src="images/10.webp" class="slide" alt="Concorso Fano">
+      <img src="images/11a.webp" class="slide" alt="Casa CM Modena">
+      <img src="images/11.webp" class="slide" alt="Casa CM Interni">
+      <img src="images/12.webp" class="slide" alt="Ristrutturazione Casa CM">
+      <img src="images/13.webp" class="slide" alt="Anita Modena Vista">
+      <img src="images/14.webp" class="slide" alt="Anita Modena Progetto">
+      <img src="images/16.webp" class="slide" alt="Anita Modena Rendering">
+    </div>
+  </div>
+</div>
+
+<div class="info-box">
+  Ricerca e progettazione architettonica,<br> 
+  dal dettaglio costruttivo alla scala urbana.<br><br>
+  <strong>Samuele Silvestri</strong><br>
+  Architetto<br>
+  Modena, Italia<br>
+  arch.samuelesilvestri@gmail.com<br>
+  +39 366 493 8286
+</div>
+
+<div class="mobile-info-wrapper">
+  <div class="mobile-data" onclick="this.classList.toggle('expanded')">
+    <strong>Samuele Silvestri</strong> (info)
+    <div class="extra-info">
+      Modena, Italia<br>
+      arch.samuelesilvestri@gmail.com<br>
+      +39 366 493 8286
+    </div>
+  </div>
   <div class="mobile-caption">
-    <div id="counter-mobile"></div>
+    <div id="counter-mobile">1 / 20</div>
     <div id="caption-mobile"></div>
   </div>
 </div>
 
 <script>
+  // Fix altezza mobile
+  function setFullHeight() {
+    document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+  }
+  window.addEventListener('resize', setFullHeight);
+  setFullHeight();
 
-const slides = document.querySelectorAll('.slide');
-const caption = document.getElementById('caption');
-const counter = document.getElementById('counter');
-const captionMobile = document.getElementById('caption-mobile');
-const counterMobile = document.getElementById('counter-mobile');
+  // Didascalie (Corrette con virgolette)
+  const captions = [
+    "Anita<br>Bar e ristorante<br>Modena, 2025",
+    "Anita<br>Bar e ristorante<br>Modena, 2025",
+    "Anita<br>Bar e ristorante<br>Modena, 2025",
+    "Anita<br>Bar e ristorante<br>Modena, 2025",
+    "Cielo - Gennaio 2021<br>Ceramica, 2026",
+    "Cielo - Gennaio 2021<br>Ceramica, 2026",
+    "Casalgrande<br>Villa indipendente<br>Reggio Emilia, 2026",
+    "Casa AD<br>Appartamento<br>Modena, 2025<br>con tilde studio",
+    "Casa AD<br>Appartamento<br>Modena, 2025<br>con tilde studio",
+    "Alberi<br>Titanio, 2022",
+    "Alberi<br>Titanio, 2022",
+    "Alberi<br>Titanio, 2022",
+    "Spazio Persona<br>Concorso<br>Fano, 2025",
+    "Spazio Persona<br>Concorso<br>Fano, 2025",
+    "Casa CM<br>Appartamento<br>Modena, 2022",
+    "Casa CM<br>Appartamento<br>Modena, 2022",
+    "Casa CM<br>Appartamento<br>Modena, 2022",
+    "Anita<br>Bar e ristorante<br>Modena, 2025",
+    "Anita<br>Bar e ristorante<br>Modena, 2025",
+    "Anita<br>Bar e ristorante<br>Modena, 2025"
+  ];
 
-let i = 0;
+  const slides = document.querySelectorAll('.slide');
+  const counter = document.getElementById('counter');
+  const caption = document.getElementById('caption');
+  const counterMob = document.getElementById('counter-mobile');
+  const captionMob = document.getElementById('caption-mobile');
+  
+  let current = 0;
 
-function show(n){
-  slides.forEach(s => s.classList.remove('active'));
-  slides[n].classList.add('active');
+  function updateSlide(i) {
+    slides.forEach(s => s.classList.remove('loaded'));
+    slides[i].classList.add('loaded');
+    
+    const displayNum = `${i + 1} / ${slides.length}`;
+    counter.textContent = displayNum;
+    counterMob.textContent = displayNum;
+    caption.innerHTML = captions[i];
+    captionMob.innerHTML = captions[i];
+    current = i;
+  }
 
-  const text = slides[n].dataset.caption;
+  // Avvio sequenza
+  window.addEventListener('load', () => {
+    // Gestione Intro
+    const intro = document.getElementById('intro');
+    const introText = document.getElementById('intro-text');
+    
+    setTimeout(() => introText.style.opacity = '1', 300);
+    
+    setTimeout(() => {
+      intro.style.opacity = '0';
+      setTimeout(() => {
+        intro.style.visibility = 'hidden';
+      }, 1200);
+    }, 2500);
 
-  caption.innerHTML = text;
-  captionMobile.innerHTML = text;
+    // Avvio Slideshow
+    updateSlide(0);
+    setInterval(() => {
+      updateSlide((current + 1) % slides.length);
+    }, 4500);
+  });
 
-  counter.textContent = n + 1;
-  counterMobile.textContent = n + 1;
-
-  i = n;
-}
-
-function next(){
-  show((i + 1) % slides.length);
-}
-
-window.onload = () => {
-  show(0);
-  setInterval(next, 4000);
-
-  // intro
-  const intro = document.getElementById('intro');
-  const text = document.getElementById('intro-text');
-
-  setTimeout(() => text.style.opacity = 1, 100);
-
-  setTimeout(() => {
-    text.style.opacity = 0;
-    intro.style.opacity = 0;
-  }, 2000);
-
-  setTimeout(() => intro.remove(), 3500);
-};
-
+  // Protezione immagini semplice
+  document.addEventListener('contextmenu', e => {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+  });
 </script>
 
 </body>
