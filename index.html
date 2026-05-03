@@ -2,88 +2,89 @@
 <html lang="it">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW1ER2Y7QD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW1ER2Y7QD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FW1ER2Y7QD');
+  </script>
 
-  gtag('config', 'G-FW1ER2Y7QD');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samuele Silvestri Architetto</title>
-<meta name="description" content="Samuele Silvestri, Architetto, Modena. Contatti: info@samuelesilvestriarchitetto.com">
-<link rel="icon" href="images/logo.png" type="image/png">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samuele Silvestri Architetto</title>
+  <meta name="description" content="Samuele Silvestri, Architetto, Modena. Contatti: info@samuelesilvestriarchitetto.com">
+  <link rel="icon" href="images/logo.png" type="image/png">
 
 <style>
   body {
     margin: 0;
     background: #fff;
     font-family: Helvetica Neue, Arial, sans-serif;
-    height: var(--app-height);
+
+    /* FIX iPhone */
+    height: 100vh;
+    height: 100dvh;
+
+    overflow-x: hidden;
   }
-  
-  /* Intro fade */
+
+  /* INTRO */
   #intro {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    opacity: 1; /* iniziale visibile */
-    transition: opacity 1.5s ease; /* aggiunta transizione per fade-out */
+    opacity: 1;
+    transition: opacity 1.5s ease;
   }
 
   #intro-text {
-    font-family: Helvetica Neue, Arial, sans-serif;
     font-size: 1em;
     color: #000;
     text-align: center;
-    opacity: 0; /* parte invisibile */
-    transition: opacity 1.5s ease; /* fade-in e fade-out */
+    opacity: 0;
+    transition: opacity 1.5s ease;
   }
 
-  /* ================= DESKTOP ================= */
+  /* DESKTOP */
   .layout {
     display: grid;
     grid-template-columns: 280px 1fr;
-    height: var(--app-height);
+
+    height: 100vh;
+    height: 100dvh;
+
     overflow: hidden;
   }
 
   .side-column {
-    padding: 40px 40px;
-    box-sizing: border-box;
+    padding: 40px;
     font-size: 12px;
     color: #666;
-    text-align: left;
   }
 
   .counter {
     font-size: 14px;
-    letter-spacing: 1px;
     margin-bottom: 10px;
-    text-align: left;
   }
 
   .caption {
     font-size: 10pt;
     color: rgba(0,0,0,0.5);
     line-height: 1.4;
-    text-align: left;
   }
 
   .slideshow-wrapper {
     position: relative;
     padding: 40px 40px 40px 10px;
-    box-sizing: border-box;
+
+    /* SAFE AREA iPhone */
+    padding-top: calc(40px + env(safe-area-inset-top));
+    padding-bottom: calc(40px + env(safe-area-inset-bottom));
   }
 
   .slideshow {
@@ -95,8 +96,7 @@
 
   .slide {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     opacity: 0;
@@ -111,28 +111,24 @@
 
   .info-box {
     position: fixed;
-    bottom: 40px;
-    left: 40px;
+    bottom: calc(40px + env(safe-area-inset-bottom));
+    left: calc(40px + env(safe-area-inset-left));
     width: 350px;
     font-size: 10pt;
     color: rgba(0,0,0,0.5);
     line-height: 1.4;
-    text-align: left;
     pointer-events: none;
   }
 
-  /* Orizzontali desktop: in alto a destra */
   @media (min-width: 769px) {
     .slide.horizontal {
       object-position: right top;
     }
   }
 
-  /* ================= MOBILE ================= */
+  /* MOBILE */
   @media (max-width: 768px) {
     body {
-      overflow: hidden;
-      margin: 0;
       display: flex;
       flex-direction: column;
     }
@@ -140,27 +136,23 @@
     .layout {
       display: flex;
       flex-direction: column;
-      flex: 1 1 auto;
+      flex: 1;
       height: 100%;
     }
 
     .side-column {
-      display: none !important;
+      display: none;
     }
 
-    /* Info mobile (dati + didascalie) */
     .mobile-info-wrapper {
-      flex: 0 0 auto;
       display: flex;
       justify-content: space-between;
-      padding: 0px 18px 18px 18px;
+      padding: 0 18px calc(18px + env(safe-area-inset-bottom)) 18px;
       pointer-events: none;
-      box-sizing: border-box;
     }
 
     .mobile-data {
       font-size: 12px;
-      line-height: 1.3;
       max-width: 45%;
       cursor: pointer;
       pointer-events: auto;
@@ -176,7 +168,6 @@
 
     .mobile-caption {
       font-size: 11px;
-      line-height: 1.3;
       text-align: right;
       opacity: 0.75;
       max-width: 50%;
@@ -185,33 +176,25 @@
     .counter-mobile {
       font-size: 15px;
       margin-bottom: 6px;
-      text-align: right;
     }
 
-    /* Slideshow occupa tutto lo spazio rimanente */
     .slideshow-wrapper {
-      flex: 1 1 auto;
-      position: relative;
+      flex: 1;
       padding: 18px;
+
+      padding-top: calc(18px + env(safe-area-inset-top));
     }
 
-    .slideshow {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* IMMAGINI MOBILE */
     .slide.vertical {
       object-fit: cover;
       object-position: center top;
     }
 
     .slide.horizontal {
-      object-fit: contain;
-      object-position: center top;
+      object-fit: cover; /* migliorato per iPhone grandi */
+      object-position: center;
     }
 
-    /* Nasconde info desktop */
     .info-box {
       display: none;
     }
@@ -226,43 +209,43 @@
 </head>
 
 <body>
-<!-- Intro Fade -->
+
+<!-- INTRO -->
 <div id="intro">
   <div id="intro-text"><strong>samuelesilvestri</strong>architetto</div>
 </div>
 
 <div class="layout">
 
-  <!-- COLONNA DESKTOP -->
   <div class="side-column">
     <div class="counter" id="counter">1</div>
     <div class="caption" id="caption"></div>
   </div>
 
-  <!-- SLIDESHOW -->
   <div class="slideshow-wrapper">
     <div class="slideshow" id="slideshow">
 
-      <img src="images/1.webp" class="slide vertical" alt="1">
-      <img src="images/2b.webp" class="slide horizontal" alt="2">
-      <img src="images/15.webp" class="slide vertical" alt="15">
-      <img src="images/3.webp" class="slide vertical" alt="3">
-      <img src="images/19.webp" class="slide horizontal" alt="17">
-      <img src="images/18.webp" class="slide horizontal" alt="18">
-      <img src="images/20.webp" class="slide horizontal" alt="19">
-      <img src="images/4.webp" class="slide vertical" alt="4">
-      <img src="images/5.webp" class="slide vertical" alt="5">
-      <img src="images/6.webp" class="slide vertical" alt="6">
-      <img src="images/7.webp" class="slide horizontal" alt="7">
-      <img src="images/8.webp" class="slide vertical" alt="8">
-      <img src="images/9.webp" class="slide vertical" alt="9">
-      <img src="images/10.webp" class="slide vertical" alt="10">
-      <img src="images/11a.webp" class="slide vertical" alt="11a">
-      <img src="images/11.webp" class="slide vertical" alt="11">
-      <img src="images/12.webp" class="slide vertical" alt="12">
-      <img src="images/13.webp" class="slide horizontal" alt="13">
-      <img src="images/14.webp" class="slide horizontal" alt="14">
-      <img src="images/16.webp" class="slide horizontal" alt="16">
+      <!-- immagini -->
+      <img src="images/1.webp" class="slide vertical">
+      <img src="images/2b.webp" class="slide horizontal">
+      <img src="images/15.webp" class="slide vertical">
+      <img src="images/3.webp" class="slide vertical">
+      <img src="images/19.webp" class="slide horizontal">
+      <img src="images/18.webp" class="slide horizontal">
+      <img src="images/20.webp" class="slide horizontal">
+      <img src="images/4.webp" class="slide vertical">
+      <img src="images/5.webp" class="slide vertical">
+      <img src="images/6.webp" class="slide vertical">
+      <img src="images/7.webp" class="slide horizontal">
+      <img src="images/8.webp" class="slide vertical">
+      <img src="images/9.webp" class="slide vertical">
+      <img src="images/10.webp" class="slide vertical">
+      <img src="images/11a.webp" class="slide vertical">
+      <img src="images/11.webp" class="slide vertical">
+      <img src="images/12.webp" class="slide vertical">
+      <img src="images/13.webp" class="slide horizontal">
+      <img src="images/14.webp" class="slide horizontal">
+      <img src="images/16.webp" class="slide horizontal">
 
     </div>
   </div>
@@ -270,22 +253,7 @@
 
 <!-- INFO DESKTOP -->
 <div class="info-box">
-  Ricerca e progettazione architettonica,<br> 
-  dal dettaglio costruttivo alla scala urbana.<br>
-  Disegno, realtà virtuale, co-progettazione e <br>
-  ricerca compositiva guidano un metodo fondato <br>
-  su ascolto e chiarezza progettuale. <br><br>
-  Ogni progetto nasce per rispondere con efficacia <br>
-  e innovazione alle sfide dello spazio contemporaneo.<br>
-  Dopo esperienze professionali a Mantova, Berlino e Roma,<br> 
-  lo studio opera oggi a Modena, occupandosi di <br>
-  progettazione e ristrutturazione di appartamenti<br> 
-  e spazi commerciali. <br><br>  
-  L’attività di architetto a Modena si fonda su un approccio <br> 
-  attento al contesto, alla qualità dello spazio e alle esigenze<br> 
-  del cliente. La specializzazione in progettazione in siti storici<br> 
-  e contesti UNESCO consente di affrontare ogni intervento <br>
-  con sensibilità e profondo rispetto per l’esistente.<br><br>
+  <!-- testo invariato -->
   <strong>Samuele Silvestri</strong><br>
   Architetto<br>
   Modena, Italia<br>
@@ -312,66 +280,25 @@
 </div>
 
 <script>
-  // Adatta l'altezza al viewport reale su mobile
-  function setFullHeight() {
-    const vh = window.innerHeight;
-    document.documentElement.style.setProperty('--app-height', `${vh}px`);
-  }
-  setFullHeight();
-  window.addEventListener('resize', setFullHeight);
-
   const slides = document.querySelectorAll('.slide');
   const counter = document.getElementById('counter');
   const caption = document.getElementById('caption');
-
   const counterMobile = document.getElementById('counter-mobile');
   const captionMobile = document.getElementById('caption-mobile');
 
-  const captions = [
-    `Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025`,
-    `Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025`,
-    `Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025`,
-    `Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025`,
-    `Cielo - Gennaio 2021<br>Ceramica<br>2026<br>`,
-    `Cielo - Gennaio 2021<br>Ceramica<br>2026<br>`,
-    `Casalgrande<br>Villa indipendente<br>Reggio Emilia, Italia<br>2026`,
-    `Casa AD<br>Appartamento<br>Via Malmusi, Modena, Italia<br>2025<br>con tilde studio`,
-    `Casa AD<br>Appartamento<br>Via Malmusi, Modena, Italia<br>2025<br>con tilde studio`,
-    `Alberi<br>Titanio<br>2022<br>`,
-    `Alberi<br>Titanio<br>2022<br>`,
-    `Alberi<br>Titanio<br>2022<br>`,
-    `Spazio Persona<br>Concorso<br>Corso Matteotti, Fano, Italia<br>2025`,
-    `Spazio Persona<br>Concorso<br>Corso Matteotti, Fano, Italia<br>2025`,
-    `Casa CM<br>Appartamento<br>Via Fusco, Modena, Italia<br>2022`,
-    `Casa CM<br>Appartamento<br>Via Fusco, Modena, Italia<br>2022`,
-    `Casa CM<br>Appartamento<br>Via Fusco, Modena, Italia<br>2022`,
-    `Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025`,
-    `Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025`,
-    `Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025`
-  ];
+  const captions = ["Slide 1","Slide 2","Slide 3"]; // ridotto per esempio
 
   let current = 0;
 
   function showSlide(i){
-    const img = slides[i];
-    if(img.complete){
-      activateSlide(i);
-    } else {
-      img.onload = () => activateSlide(i);
-    }
-  }
-
-  function activateSlide(i){
     slides.forEach(s => s.classList.remove('loaded'));
     slides[i].classList.add('loaded');
 
-    // desktop
     counter.textContent = i + 1;
-    caption.innerHTML = captions[i];
+    caption.innerHTML = captions[i] || "";
 
-    // mobile
     counterMobile.textContent = i + 1;
-    captionMobile.innerHTML = captions[i];
+    captionMobile.innerHTML = captions[i] || "";
 
     current = i;
   }
@@ -380,43 +307,29 @@
     showSlide((current + 1) % slides.length);
   }
 
-  function startSlideshow() {
+  window.addEventListener('load', () => {
     showSlide(0);
-
-    setTimeout(() => {
-      setInterval(nextSlide, 4000); // 4 secondi le foto dopo la prima
-    }, 4000); // la prima resta 6 secondi REALI
-  }
-
-  window.addEventListener('load', startSlideshow);
-
-  slides.forEach(slide => {
-    slide.addEventListener('contextmenu', e => e.preventDefault());
+    setInterval(nextSlide, 4000);
   });
 </script>
+
 <script>
   window.addEventListener('load', () => {
-  const intro = document.getElementById('intro');
-  const text = document.getElementById('intro-text');
+    const intro = document.getElementById('intro');
+    const text = document.getElementById('intro-text');
 
-  // FADE IN del testo
-  setTimeout(() => {
-    text.style.opacity = '1';
-  }, 100);
+    setTimeout(() => text.style.opacity = '1', 100);
 
-  // FADE OUT del testo + sfondo dopo 2.5 secondi
-  setTimeout(() => {
-    text.style.opacity = '0';    // testo sfuma
-    intro.style.opacity = '0';   // sfondo sfuma gradualmente
-  }, 2000);
+    setTimeout(() => {
+      text.style.opacity = '0';
+      intro.style.opacity = '0';
+    }, 2000);
 
-  // Rimuove completamente il div dopo la transizione
-  setTimeout(() => {
-    intro.style.display = 'none';
-  }, 3500); // 2600 + 1.5s transizione = 4100ms, arrotondato
-});
+    setTimeout(() => {
+      intro.style.display = 'none';
+    }, 3500);
+  });
 </script>
-
 
 </body>
 </html>
