@@ -2,171 +2,290 @@
 <html lang="it">
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW1ER2Y7QD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-FW1ER2Y7QD');
-  </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW1ER2Y7QD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FW1ER2Y7QD');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samuele Silvestri Architetto</title>
+<meta name="description" content="Samuele Silvestri, Architetto, Modena. Contatti: info@samuelesilvestriarchitetto.com">
+<link rel="icon" href="images/logo.png" type="image/png">
+
+
+<style>
+  body {
+    margin: 0;
+    background: #fff;
+    font-family: Helvetica Neue, Arial, sans-serif;
+    height: var(--app-height);
+  }
   
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Samuele Silvestri Architetto | Modena</title>
-  <meta name="description" content="Samuele Silvestri, Architetto a Modena. Progettazione architettonica, ristrutturazioni e interni. Contatti: arch.samuelesilvestri@gmail.com">
-  <link rel="icon" href="images/logo.png" type="image/png">
+  /* Intro fade */
+  #intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 1; /* iniziale visibile */
+    transition: opacity 1.5s ease; /* aggiunta transizione per fade-out */
+  }
 
-  <style>
-    :root { --app-height: 100vh; }
-    
+  #intro-text {
+    font-family: Helvetica Neue, Arial, sans-serif;
+    font-size: 1em;
+    color: #000;
+    text-align: center;
+    opacity: 0; /* parte invisibile */
+    transition: opacity 1.5s ease; /* fade-in e fade-out */
+  }
+
+  /* ================= DESKTOP ================= */
+  .layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    height: var(--app-height);
+    overflow: hidden;
+  }
+
+  .side-column {
+    padding: 40px 40px;
+    box-sizing: border-box;
+    font-size: 12px;
+    color: #666;
+    text-align: left;
+  }
+
+  .counter {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .caption {
+    font-size: 10pt;
+    color: rgba(0,0,0,0.5);
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .slideshow-wrapper {
+    position: relative;
+    padding: 40px 40px 40px 10px;
+    box-sizing: border-box;
+  }
+
+  .slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.8s ease;
+    object-fit: contain;
+    object-position: right center;
+  }
+
+  .slide.loaded {
+    opacity: 1;
+  }
+
+  .info-box {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    width: 350px;
+    font-size: 10pt;
+    color: rgba(0,0,0,0.5);
+    line-height: 1.4;
+    text-align: left;
+    pointer-events: none;
+  }
+
+  /* Orizzontali desktop: in alto a destra */
+  @media (min-width: 769px) {
+    .slide.horizontal {
+      object-position: right top;
+    }
+  }
+
+  /* ================= MOBILE ================= */
+  @media (max-width: 768px) {
     body {
+      overflow: hidden;
       margin: 0;
-      background: #fff;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      height: var(--app-height);
-      overflow: hidden; /* Evita scroll della pagina intera */
-    }
-    
-    /* Intro fade */
-    #intro {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: #fff;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: opacity 1.2s ease, visibility 1.2s;
+      flex-direction: column;
     }
 
-    #intro-text {
-      font-size: 1.2em;
-      color: #000;
-      text-align: center;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-
-    /* Layout */
     .layout {
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      height: var(--app-height);
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      height: 100%;
     }
 
     .side-column {
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      color: #666;
+      display: none !important;
     }
 
-    .counter { font-size: 14px; margin-bottom: 15px; color: #000; }
-    .caption { font-size: 10pt; line-height: 1.5; color: rgba(0,0,0,0.6); }
+    /* Info mobile (dati + didascalie) */
+    .mobile-info-wrapper {
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 18px 18px 18px;
+      pointer-events: none;
+      box-sizing: border-box;
+    }
 
+    .mobile-data {
+      font-size: 12px;
+      line-height: 1.3;
+      max-width: 45%;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    .mobile-data .extra-info {
+      display: none;
+    }
+
+    .mobile-data.expanded .extra-info {
+      display: block;
+    }
+
+    .mobile-caption {
+      font-size: 11px;
+      line-height: 1.3;
+      text-align: right;
+      opacity: 0.75;
+      max-width: 50%;
+    }
+
+    .counter-mobile {
+      font-size: 15px;
+      margin-bottom: 6px;
+      text-align: right;
+    }
+
+    /* Slideshow occupa tutto lo spazio rimanente */
     .slideshow-wrapper {
+      flex: 1 1 auto;
       position: relative;
-      padding: 40px 40px 40px 0;
+      padding: 18px;
     }
 
     .slideshow {
-      position: relative;
       width: 100%;
       height: 100%;
     }
 
-    .slide {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      opacity: 0;
-      transition: opacity 1.5s ease-in-out;
+    /* IMMAGINI MOBILE */
+    .slide.vertical {
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .slide.horizontal {
       object-fit: contain;
-      object-position: right center;
+      object-position: center top;
     }
 
-    .slide.loaded { opacity: 1; }
-
+    /* Nasconde info desktop */
     .info-box {
-      position: fixed;
-      bottom: 40px;
-      left: 40px;
-      width: 320px;
-      font-size: 10pt;
-      color: rgba(0,0,0,0.5);
-      line-height: 1.4;
-      pointer-events: none;
+      display: none;
     }
+  }
 
-    /* Mobile adjustments */
-    @media (max-width: 768px) {
-      .layout { display: flex; flex-direction: column; }
-      .side-column, .info-box { display: none; }
-      
-      .slideshow-wrapper { flex: 1; padding: 20px; }
-      .slide { object-position: center center; }
-
-      .mobile-info-wrapper {
-        padding: 0 20px 30px 20px;
-        display: flex;
-        justify-content: space-between;
-        font-size: 12px;
-      }
-      .mobile-data .extra-info { display: none; margin-top: 5px; }
-      .mobile-data.expanded .extra-info { display: block; }
-      .mobile-caption { text-align: right; max-width: 60%; }
+  @media (min-width: 769px) {
+    .mobile-info-wrapper {
+      display: none;
     }
-
-    @media (min-width: 769px) {
-      .mobile-info-wrapper { display: none; }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
-
+<!-- Intro Fade -->
 <div id="intro">
   <div id="intro-text"><strong>samuelesilvestri</strong>architetto</div>
 </div>
 
 <div class="layout">
+
+  <!-- COLONNA DESKTOP -->
   <div class="side-column">
-    <div class="counter" id="counter">1 / 20</div>
+    <div class="counter" id="counter">1</div>
     <div class="caption" id="caption"></div>
   </div>
 
+  <!-- SLIDESHOW -->
   <div class="slideshow-wrapper">
     <div class="slideshow" id="slideshow">
-      <!-- Immagini con alt descrittivi per SEO -->
-      <img src="images/1.webp" class="slide" alt="Anita Bar Ristorante Modena">
-      <img src="images/2b.webp" class="slide" alt="Interni Anita Modena">
-      <img src="images/15.webp" class="slide" alt="Progetto Anita">
-      <img src="images/3.webp" class="slide" alt="Dettaglio Anita">
-      <img src="images/19.webp" class="slide" alt="Cielo Ceramica">
-      <img src="images/18.webp" class="slide" alt="Cielo Ceramica Samuele Silvestri">
-      <img src="images/20.webp" class="slide" alt="Villa Reggio Emilia">
-      <img src="images/4.webp" class="slide" alt="Casa AD Modena">
-      <img src="images/5.webp" class="slide" alt="Casa AD Interni">
-      <img src="images/6.webp" class="slide" alt="Alberi Titanio">
-      <img src="images/7.webp" class="slide" alt="Alberi Progetto">
-      <img src="images/8.webp" class="slide" alt="Dettaglio Titanio">
-      <img src="images/9.webp" class="slide" alt="Spazio Persona Fano">
-      <img src="images/10.webp" class="slide" alt="Concorso Fano">
-      <img src="images/11a.webp" class="slide" alt="Casa CM Modena">
-      <img src="images/11.webp" class="slide" alt="Casa CM Interni">
-      <img src="images/12.webp" class="slide" alt="Ristrutturazione Casa CM">
-      <img src="images/13.webp" class="slide" alt="Anita Modena Vista">
-      <img src="images/14.webp" class="slide" alt="Anita Modena Progetto">
-      <img src="images/16.webp" class="slide" alt="Anita Modena Rendering">
+
+      <img src="images/1.webp" class="slide vertical" alt="1">
+      <img src="images/2b.webp" class="slide horizontal" alt="2">
+      <img src="images/15.webp" class="slide vertical" alt="15">
+      <img src="images/3.webp" class="slide vertical" alt="3">
+      <img src="images/19.webp" class="slide horizontal" alt="17">
+      <img src="images/18.webp" class="slide horizontal" alt="18">
+      <img src="images/20.webp" class="slide horizontal" alt="19">
+      <img src="images/4.webp" class="slide vertical" alt="4">
+      <img src="images/5.webp" class="slide vertical" alt="5">
+      <img src="images/6.webp" class="slide vertical" alt="6">
+      <img src="images/7.webp" class="slide horizontal" alt="7">
+      <img src="images/8.webp" class="slide vertical" alt="8">
+      <img src="images/9.webp" class="slide vertical" alt="9">
+      <img src="images/10.webp" class="slide vertical" alt="10">
+      <img src="images/11a.webp" class="slide vertical" alt="11a">
+      <img src="images/11.webp" class="slide vertical" alt="11">
+      <img src="images/12.webp" class="slide vertical" alt="12">
+      <img src="images/13.webp" class="slide horizontal" alt="13">
+      <img src="images/14.webp" class="slide horizontal" alt="14">
+      <img src="images/16.webp" class="slide horizontal" alt="16">
+
     </div>
   </div>
 </div>
 
+<!-- INFO DESKTOP -->
 <div class="info-box">
   Ricerca e progettazione architettonica,<br> 
-  dal dettaglio costruttivo alla scala urbana.<br><br>
+  dal dettaglio costruttivo alla scala urbana.<br>
+  Disegno, realtà virtuale, co-progettazione e <br>
+  ricerca compositiva guidano un metodo fondato <br>
+  su ascolto e chiarezza progettuale. <br><br>
+  Ogni progetto nasce per rispondere con efficacia <br>
+  e innovazione alle sfide dello spazio contemporaneo.<br>
+  Dopo esperienze professionali a Mantova, Berlino e Roma,<br> 
+  lo studio opera oggi a Modena, occupandosi di <br>
+  progettazione e ristrutturazione di appartamenti<br> 
+  e spazi commerciali. <br><br>  
+  L’attività di architetto a Modena si fonda su un approccio <br> 
+  attento al contesto, alla qualità dello spazio e alle esigenze<br> 
+  del cliente. La specializzazione in progettazione in siti storici<br> 
+  e contesti UNESCO consente di affrontare ogni intervento <br>
+  con sensibilità e profondo rispetto per l’esistente.<br><br>
   <strong>Samuele Silvestri</strong><br>
   Architetto<br>
   Modena, Italia<br>
@@ -174,100 +293,130 @@
   +39 366 493 8286
 </div>
 
+<!-- INFO MOBILE -->
 <div class="mobile-info-wrapper">
   <div class="mobile-data" onclick="this.classList.toggle('expanded')">
-    <strong>Samuele Silvestri</strong> (info)
-    <div class="extra-info">
+    <strong>Samuele Silvestri</strong><br>
+    Architetto<br>
+    <span class="extra-info">
       Modena, Italia<br>
-      arch.samuelesilvestri@gmail.com<br>
+      info@samuelesilvestriarchitetto.com<br>
       +39 366 493 8286
-    </div>
+    </span>
   </div>
+
   <div class="mobile-caption">
-    <div id="counter-mobile">1 / 20</div>
+    <div class="counter-mobile" id="counter-mobile">1</div>
     <div id="caption-mobile"></div>
   </div>
 </div>
 
 <script>
-  // Fix altezza mobile
+  // Adatta l'altezza al viewport reale su mobile
   function setFullHeight() {
-    document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+    const vh = window.innerHeight;
+    document.documentElement.style.setProperty('--app-height', `${vh}px`);
   }
-  window.addEventListener('resize', setFullHeight);
   setFullHeight();
-
-  // Didascalie (Corrette con virgolette)
-  const captions = [
-    "Anita<br>Bar e ristorante<br>Modena, 2025",
-    "Anita<br>Bar e ristorante<br>Modena, 2025",
-    "Anita<br>Bar e ristorante<br>Modena, 2025",
-    "Anita<br>Bar e ristorante<br>Modena, 2025",
-    "Cielo - Gennaio 2021<br>Ceramica, 2026",
-    "Cielo - Gennaio 2021<br>Ceramica, 2026",
-    "Casalgrande<br>Villa indipendente<br>Reggio Emilia, 2026",
-    "Casa AD<br>Appartamento<br>Modena, 2025<br>con tilde studio",
-    "Casa AD<br>Appartamento<br>Modena, 2025<br>con tilde studio",
-    "Alberi<br>Titanio, 2022",
-    "Alberi<br>Titanio, 2022",
-    "Alberi<br>Titanio, 2022",
-    "Spazio Persona<br>Concorso<br>Fano, 2025",
-    "Spazio Persona<br>Concorso<br>Fano, 2025",
-    "Casa CM<br>Appartamento<br>Modena, 2022",
-    "Casa CM<br>Appartamento<br>Modena, 2022",
-    "Casa CM<br>Appartamento<br>Modena, 2022",
-    "Anita<br>Bar e ristorante<br>Modena, 2025",
-    "Anita<br>Bar e ristorante<br>Modena, 2025",
-    "Anita<br>Bar e ristorante<br>Modena, 2025"
-  ];
+  window.addEventListener('resize', setFullHeight);
 
   const slides = document.querySelectorAll('.slide');
   const counter = document.getElementById('counter');
   const caption = document.getElementById('caption');
-  const counterMob = document.getElementById('counter-mobile');
-  const captionMob = document.getElementById('caption-mobile');
-  
+
+  const counterMobile = document.getElementById('counter-mobile');
+  const captionMobile = document.getElementById('caption-mobile');
+
+  const captions = [
+    "Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025",
+    "Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025",
+    "Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025",
+    "Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025",
+    "Cielo - Gennaio 2021<br>Ceramica<br>2026<br>",
+    "Cielo - Gennaio 2021<br>Ceramica<br>2026<br>",
+    "Casalgrande<br>Villa indipendente<br>Reggio Emilia, Italia<br>2026",
+    "Casa AD<br>Appartamento<br>Via Malmusi, Modena, Italia<br>2025<br>con tilde studio",
+    "Casa AD<br>Appartamento<br>Via Malmusi, Modena, Italia<br>2025<br>con tilde studio",
+    "Alberi<br>Titanio<br>2022<br>",
+    "Alberi<br>Titanio<br>2022<br>",
+    "Alberi<br>Titanio<br>2022<br>",
+    "Spazio Persona<br>Concorso<br>Corso Matteotti, Fano, Italia<br>2025",
+    "Spazio Persona<br>Concorso<br>Corso Matteotti, Fano, Italia<br>2025",
+    "Casa CM<br>Appartamento<br>Via Fusco, Modena, Italia<br>2022",
+    "Casa CM<br>Appartamento<br>Via Fusco, Modena, Italia<br>2022",
+    "Casa CM<br>Appartamento<br>Via Fusco, Modena, Italia<br>2022",
+    "Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025",
+    "Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025",
+    "Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025"
+  ];
+
   let current = 0;
 
-  function updateSlide(i) {
+  function showSlide(i){
+    const img = slides[i];
+    if(img.complete){
+      activateSlide(i);
+    } else {
+      img.onload = () => activateSlide(i);
+    }
+  }
+
+  function activateSlide(i){
     slides.forEach(s => s.classList.remove('loaded'));
     slides[i].classList.add('loaded');
-    
-    const displayNum = `${i + 1} / ${slides.length}`;
-    counter.textContent = displayNum;
-    counterMob.textContent = displayNum;
+
+    // desktop
+    counter.textContent = i + 1;
     caption.innerHTML = captions[i];
-    captionMob.innerHTML = captions[i];
+
+    // mobile
+    counterMobile.textContent = i + 1;
+    captionMobile.innerHTML = captions[i];
+
     current = i;
   }
 
-  // Avvio sequenza
-  window.addEventListener('load', () => {
-    // Gestione Intro
-    const intro = document.getElementById('intro');
-    const introText = document.getElementById('intro-text');
-    
-    setTimeout(() => introText.style.opacity = '1', 300);
-    
+  function nextSlide(){
+    showSlide((current + 1) % slides.length);
+  }
+
+  function startSlideshow() {
+    showSlide(0);
+
     setTimeout(() => {
-      intro.style.opacity = '0';
-      setTimeout(() => {
-        intro.style.visibility = 'hidden';
-      }, 1200);
-    }, 2500);
+      setInterval(nextSlide, 4000); // 4 secondi le foto dopo la prima
+    }, 4000); // la prima resta 6 secondi REALI
+  }
 
-    // Avvio Slideshow
-    updateSlide(0);
-    setInterval(() => {
-      updateSlide((current + 1) % slides.length);
-    }, 4500);
-  });
+  window.addEventListener('load', startSlideshow);
 
-  // Protezione immagini semplice
-  document.addEventListener('contextmenu', e => {
-    if (e.target.tagName === 'IMG') e.preventDefault();
+  slides.forEach(slide => {
+    slide.addEventListener('contextmenu', e => e.preventDefault());
   });
 </script>
+<script>
+  window.addEventListener('load', () => {
+  const intro = document.getElementById('intro');
+  const text = document.getElementById('intro-text');
+
+  // FADE IN del testo
+  setTimeout(() => {
+    text.style.opacity = '1';
+  }, 100);
+
+  // FADE OUT del testo + sfondo dopo 2.5 secondi
+  setTimeout(() => {
+    text.style.opacity = '0';    // testo sfuma
+    intro.style.opacity = '0';   // sfondo sfuma gradualmente
+  }, 2000);
+
+  // Rimuove completamente il div dopo la transizione
+  setTimeout(() => {
+    intro.style.display = 'none';
+  }, 3500); // 2600 + 1.5s transizione = 4100ms, arrotondato
+});
+</script>
+
 
 </body>
 </html>
