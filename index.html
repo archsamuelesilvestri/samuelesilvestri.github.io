@@ -1,45 +1,90 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW1ER2Y7QD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-FW1ER2Y7QD');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Samuele Silvestri Architetto</title>
-<meta name="description" content="Samuele Silvestri, Architetto, Modena. Contatti: info@samuelesilvestriarchitetto.com">
+<title>Samuele Silvestri Architetto – Modena</title>
+<meta name="description" content="Samuele Silvestri, architetto a Modena. Progettazione e ristrutturazione di appartamenti e spazi commerciali, interventi in siti storici e contesti UNESCO.">
 <link rel="icon" href="images/logo.png" type="image/png">
+<link rel="canonical" href="https://samuelesilvestriarchitetto.com/">
+
+<!-- Anteprima quando il link viene condiviso (WhatsApp, LinkedIn, Facebook…) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Samuele Silvestri Architetto – Modena">
+<meta property="og:description" content="Ricerca e progettazione architettonica, dal dettaglio costruttivo alla scala urbana.">
+<meta property="og:url" content="https://samuelesilvestriarchitetto.com/">
+<meta property="og:image" content="https://samuelesilvestriarchitetto.com/images/1.webp">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Dati strutturati per le ricerche locali ("architetto Modena") -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Samuele Silvestri Architetto",
+  "description": "Studio di architettura: progettazione e ristrutturazione di appartamenti e spazi commerciali, interventi in siti storici e contesti UNESCO.",
+  "url": "https://samuelesilvestriarchitetto.com/",
+  "image": "https://samuelesilvestriarchitetto.com/images/1.webp",
+  "email": "info@samuelesilvestriarchitetto.com",
+  "telephone": "+39 366 493 8286",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Modena",
+    "addressRegion": "MO",
+    "addressCountry": "IT"
+  },
+  "areaServed": "Modena",
+  "founder": { "@type": "Person", "name": "Samuele Silvestri", "jobTitle": "Architetto" }
+}
+</script>
+
+<!-- La prima immagine parte subito, senza aspettare il resto -->
+<link rel="preload" as="image" href="images/1.webp" fetchpriority="high">
+
+<!-- Segnala che JavaScript è attivo (serve a mostrare l'intro solo se può anche sparire) -->
+<script>document.documentElement.classList.add('js');</script>
 
 <style>
-  * {
-    box-sizing: border-box;
+  :root {
+    --muted: rgba(0, 0, 0, 0.5);
+    --fade: 1.8s;
   }
 
-  html {
-    height: 100%;
-  }
+  * { box-sizing: border-box; }
+
+  html { height: 100%; }
 
   body {
     margin: 0;
     background: #fff;
-    font-family: Helvetica Neue, Arial, sans-serif;
+    color: #000;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     height: var(--app-height, 100vh);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
-  
-  /* Intro fade */
-  #intro {
+
+  a { color: inherit; text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* ================= INTRO ================= */
+  #intro { display: none; }
+
+  .js #intro {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: #fff;
     display: flex;
     align-items: center;
@@ -50,7 +95,6 @@
   }
 
   #intro-text {
-    font-family: Helvetica Neue, Arial, sans-serif;
     font-size: 1em;
     color: #000;
     text-align: center;
@@ -58,42 +102,73 @@
     transition: opacity 1.5s ease;
   }
 
-  /* ================= DESKTOP ================= */
+  /* ================= LAYOUT DESKTOP ================= */
   .layout {
     display: grid;
     grid-template-columns: 280px 1fr;
-    height: var(--app-height, 100vh);
-    overflow: hidden;
     flex: 1;
+    min-height: 0;
+    overflow: hidden;
   }
 
   .side-column {
-    padding: 40px 40px;
-    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 40px;
     font-size: 12px;
     color: #666;
-    text-align: left;
   }
 
   .counter {
     font-size: 14px;
     letter-spacing: 1px;
     margin-bottom: 10px;
-    text-align: left;
   }
 
   .caption {
     font-size: 10pt;
-    color: rgba(0,0,0,0.5);
+    color: var(--muted);
     line-height: 1.4;
-    text-align: left;
   }
 
+  /* Il testo dello studio sta in fondo alla colonna: non può più finire sopra la didascalia */
+  .info-box {
+    margin-top: auto;
+    padding-top: 24px;
+    width: 350px;
+    font-size: 10pt;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  .info-box p { margin: 0 0 1.4em; }
+  .info-box address { font-style: normal; }
+
+  .cookie-link {
+    display: inline-block;
+    margin-top: 1.4em;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+  .cookie-link:hover, .cookie-link:focus-visible { text-decoration: underline; }
+
+  /* Schermi desktop bassi: si nascondono i paragrafi secondari (restano nel codice per Google) */
+  @media (min-width: 769px) and (max-height: 720px) {
+    .info-box .secondary { display: none; }
+  }
+
+  /* ================= SLIDESHOW ================= */
   .slideshow-wrapper {
     position: relative;
     padding: 40px 40px 40px 10px;
-    box-sizing: border-box;
-    height: 100%;
+    min-height: 0;
     overflow: hidden;
   }
 
@@ -102,77 +177,54 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    cursor: pointer;
+    outline: none;
   }
 
   .slide {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 1.8s ease;
+    transition: opacity var(--fade) ease;
     object-fit: contain;
     object-position: right center;
+    user-select: none;
+    -webkit-user-drag: none;
   }
 
-  .slide.loaded {
-    opacity: 1;
-  }
+  .slide.horizontal { object-position: right top; }
 
-  .info-box {
-    position: fixed;
-    bottom: 40px;
-    left: 40px;
-    width: 350px;
-    font-size: 10pt;
-    color: rgba(0,0,0,0.5);
-    line-height: 1.4;
-    text-align: left;
-    pointer-events: none;
-  }
+  .slide.active { opacity: 1; }
 
-  /* Orizzontali desktop: in alto a destra */
-  @media (min-width: 769px) {
-    .slide.horizontal {
-      object-position: right top;
-    }
-  }
+  .mobile-info-wrapper { display: none; }
 
   /* ================= MOBILE ================= */
   @media (max-width: 768px) {
-    body {
-      overflow: hidden;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      height: var(--app-height, 100vh);
-    }
-
     .layout {
       display: flex;
       flex-direction: column;
+    }
+
+    .side-column { display: none; }
+
+    .slideshow-wrapper {
       flex: 1;
-      height: auto;
-      min-height: 0;
-      overflow: hidden;
+      padding: 24px;
     }
 
-    .side-column {
-      display: none !important;
-    }
+    .slide,
+    .slide.horizontal { object-position: center center; }
 
-    /* Info mobile (dati + didascalie) */
     .mobile-info-wrapper {
       flex: 0 0 auto;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      padding: 12px 18px;
-      pointer-events: auto;
-      box-sizing: border-box;
+      padding: 12px 18px calc(12px + env(safe-area-inset-bottom));
       background: #fff;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .mobile-top {
@@ -191,7 +243,8 @@
       display: block;
       margin-top: 4px;
       font-size: 11px;
-      color: rgba(0,0,0,0.6);
+      color: rgba(0, 0, 0, 0.6);
+      font-style: normal;
     }
 
     .mobile-caption {
@@ -204,67 +257,78 @@
     .counter-mobile {
       font-size: 15px;
       margin-bottom: 6px;
-      text-align: right;
     }
 
-    /* Slideshow occupa tutto lo spazio rimanente */
-    .slideshow-wrapper {
-      flex: 1;
-      position: relative;
-      padding: 12px;
-      min-height: 0;
-      overflow: hidden;
+    /* Testo dello studio anche su mobile, apribile a richiesta */
+    .mobile-about summary {
+      font-size: 11px;
+      color: rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      list-style: none;
     }
+    .mobile-about summary::-webkit-details-marker { display: none; }
+    .mobile-about summary::after { content: " +"; }
+    .mobile-about[open] summary::after { content: " –"; }
 
-    .slideshow {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
+    .mobile-about-text {
+      max-height: 40vh;
+      overflow-y: auto;
+      margin-top: 8px;
+      font-size: 11px;
+      line-height: 1.4;
+      color: rgba(0, 0, 0, 0.6);
     }
-
-    /* IMMAGINI MOBILE - Fixed for vertical/horizontal with equal margins */
-    .slide {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-      width: calc(100% - 24px);
-      height: calc(100% - 24px);
-      opacity: 0;
-      transition: opacity 1.8s ease;
-      object-fit: contain;
-      object-position: center center;
-    }
-
-    .slide.vertical {
-      object-fit: contain;
-      object-position: center center;
-    }
-
-    .slide.horizontal {
-      object-fit: contain;
-      object-position: center center;
-    }
-
-    /* Nasconde info desktop */
-    .info-box {
-      display: none;
-    }
+    .mobile-about-text p { margin: 0 0 1em; }
   }
 
-  @media (min-width: 769px) {
-    .mobile-info-wrapper {
-      display: none;
-    }
+  /* ================= BANNER COOKIE ================= */
+  .cookie-banner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9000;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+    padding: 14px 40px calc(14px + env(safe-area-inset-bottom));
+    background: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 11px;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  .cookie-banner[hidden] { display: none; }
+  .cookie-banner p { margin: 0; max-width: 640px; }
+  .cookie-actions { display: flex; gap: 8px; }
+  .cookie-actions button {
+    font: inherit;
+    padding: 6px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+  }
+  .cookie-actions button:hover, .cookie-actions button:focus-visible { border-color: #000; }
+
+  @media (max-width: 768px) {
+    .cookie-banner { padding-left: 18px; padding-right: 18px; }
+  }
+
+  /* ================= MOVIMENTO RIDOTTO ================= */
+  @media (prefers-reduced-motion: reduce) {
+    .slide, #intro, #intro-text { transition: none; }
   }
 </style>
 </head>
 
 <body>
-<!-- Intro Fade -->
-<div id="intro">
+<h1 class="visually-hidden">Samuele Silvestri, architetto a Modena</h1>
+
+<!-- INTRO -->
+<div id="intro" aria-hidden="true">
   <div id="intro-text"><strong>samuelesilvestri</strong>architetto</div>
 </div>
 
@@ -272,62 +336,101 @@
 
   <!-- COLONNA DESKTOP -->
   <div class="side-column">
-    <div class="counter" id="counter">1</div>
-    <div class="caption" id="caption"></div>
+    <div class="counter" id="counter">1 / 20</div>
+    <div class="caption" id="caption">Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025</div>
+
+    <div class="info-box">
+      <p>Ricerca e progettazione architettonica, dal dettaglio costruttivo alla scala urbana.
+        Disegno, realtà virtuale, co-progettazione e ricerca compositiva guidano un metodo fondato
+        su ascolto e chiarezza progettuale.</p>
+      <p class="secondary">Ogni progetto nasce per rispondere con efficacia e innovazione alle sfide dello spazio contemporaneo.
+        Dopo esperienze professionali a Mantova, Berlino e Roma, lo studio opera oggi a Modena, occupandosi di
+        progettazione e ristrutturazione di appartamenti e spazi commerciali.</p>
+      <p class="secondary">L'attività di architetto a Modena si fonda su un approccio attento al contesto, alla qualità dello spazio
+        e alle esigenze del cliente. La specializzazione in progettazione in siti storici e contesti UNESCO consente
+        di affrontare ogni intervento con sensibilità e profondo rispetto per l'esistente.</p>
+      <address>
+        <strong>Samuele Silvestri</strong><br>
+        Architetto<br>
+        Modena, Italia<br>
+        <a href="mailto:info@samuelesilvestriarchitetto.com">info@samuelesilvestriarchitetto.com</a><br>
+        <a href="tel:+393664938286">+39 366 493 8286</a>
+      </address>
+      <button type="button" class="cookie-link" data-cookie-settings>Preferenze cookie</button>
+    </div>
   </div>
 
   <!-- SLIDESHOW -->
   <div class="slideshow-wrapper">
-    <div class="slideshow" id="slideshow">
-
-      <img src="images/1.webp" class="slide vertical" alt="1">
-      <img src="images/2b.webp" class="slide horizontal" alt="2">
-      <img src="images/15.webp" class="slide vertical" alt="15">
-      <img src="images/3.webp" class="slide vertical" alt="3">
-      <img src="images/19.webp" class="slide horizontal" alt="17">
-      <img src="images/18.webp" class="slide horizontal" alt="18">
-      <img src="images/20.webp" class="slide horizontal" alt="19">
-      <img src="images/4.webp" class="slide vertical" alt="4">
-      <img src="images/5.webp" class="slide vertical" alt="5">
-      <img src="images/6.webp" class="slide vertical" alt="6">
-      <img src="images/7.webp" class="slide horizontal" alt="7">
-      <img src="images/8.webp" class="slide vertical" alt="8">
-      <img src="images/9.webp" class="slide vertical" alt="9">
-      <img src="images/10.webp" class="slide vertical" alt="10">
-      <img src="images/11a.webp" class="slide vertical" alt="11a">
-      <img src="images/11.webp" class="slide vertical" alt="11">
-      <img src="images/12.webp" class="slide vertical" alt="12">
-      <img src="images/13.webp" class="slide horizontal" alt="13">
-      <img src="images/14.webp" class="slide horizontal" alt="14">
-      <img src="images/16.webp" class="slide horizontal" alt="16">
-
+    <div class="slideshow" id="slideshow" tabindex="0" role="region" aria-roledescription="galleria"
+         aria-label="Progetti. Usa le frecce o tocca a destra e a sinistra per scorrere.">
+      <!--
+        Ogni immagine porta con sé la sua didascalia (data-caption, righe separate da "|").
+        Così, se riordini o aggiungi foto, didascalie e immagini non possono più sfasarsi.
+        Solo la prima ha src: le altre si caricano una alla volta mentre la galleria scorre.
+      -->
+      <img src="images/1.webp" class="slide vertical active" fetchpriority="high"
+           alt="Anita, bar e ristorante in Corso Canalgrande a Modena – immagine 1"
+           data-caption="Anita|Bar e ristorante|Corso Canalgrande, Modena, Italia|2025">
+      <img data-src="images/2b.webp" class="slide horizontal"
+           alt="Anita, bar e ristorante in Corso Canalgrande a Modena – immagine 2"
+           data-caption="Anita|Bar e ristorante|Corso Canalgrande, Modena, Italia|2025">
+      <img data-src="images/15.webp" class="slide vertical"
+           alt="Anita, bar e ristorante in Corso Canalgrande a Modena – immagine 3"
+           data-caption="Anita|Bar e ristorante|Corso Canalgrande, Modena, Italia|2025">
+      <img data-src="images/3.webp" class="slide vertical"
+           alt="Anita, bar e ristorante in Corso Canalgrande a Modena – immagine 4"
+           data-caption="Anita|Bar e ristorante|Corso Canalgrande, Modena, Italia|2025">
+      <img data-src="images/19.webp" class="slide horizontal"
+           alt="Cielo – Gennaio 2021, opera in ceramica – immagine 1"
+           data-caption="Cielo - Gennaio 2021|Ceramica|2026">
+      <img data-src="images/18.webp" class="slide horizontal"
+           alt="Cielo – Gennaio 2021, opera in ceramica – immagine 2"
+           data-caption="Cielo - Gennaio 2021|Ceramica|2026">
+      <img data-src="images/20.webp" class="slide horizontal"
+           alt="Casalgrande, villa indipendente in provincia di Reggio Emilia"
+           data-caption="Casalgrande|Villa indipendente|Reggio Emilia, Italia|2026">
+      <img data-src="images/4.webp" class="slide vertical"
+           alt="Casa AD, appartamento in Via Malmusi a Modena – immagine 1"
+           data-caption="Casa AD|Appartamento|Via Malmusi, Modena, Italia|2025|con tilde studio">
+      <img data-src="images/5.webp" class="slide vertical"
+           alt="Casa AD, appartamento in Via Malmusi a Modena – immagine 2"
+           data-caption="Casa AD|Appartamento|Via Malmusi, Modena, Italia|2025|con tilde studio">
+      <img data-src="images/6.webp" class="slide vertical"
+           alt="Alberi, opera in titanio – immagine 1"
+           data-caption="Alberi|Titanio|2022">
+      <img data-src="images/7.webp" class="slide horizontal"
+           alt="Alberi, opera in titanio – immagine 2"
+           data-caption="Alberi|Titanio|2022">
+      <img data-src="images/8.webp" class="slide vertical"
+           alt="Alberi, opera in titanio – immagine 3"
+           data-caption="Alberi|Titanio|2022">
+      <img data-src="images/9.webp" class="slide vertical"
+           alt="Spazio Persona, progetto di concorso in Corso Matteotti a Fano – immagine 1"
+           data-caption="Spazio Persona|Concorso|Corso Matteotti, Fano, Italia|2025">
+      <img data-src="images/10.webp" class="slide vertical"
+           alt="Spazio Persona, progetto di concorso in Corso Matteotti a Fano – immagine 2"
+           data-caption="Spazio Persona|Concorso|Corso Matteotti, Fano, Italia|2025">
+      <img data-src="images/11a.webp" class="slide vertical"
+           alt="Casa CM, appartamento in Via Fusco a Modena – immagine 1"
+           data-caption="Casa CM|Appartamento|Via Fusco, Modena, Italia|2022">
+      <img data-src="images/11.webp" class="slide vertical"
+           alt="Casa CM, appartamento in Via Fusco a Modena – immagine 2"
+           data-caption="Casa CM|Appartamento|Via Fusco, Modena, Italia|2022">
+      <img data-src="images/12.webp" class="slide vertical"
+           alt="Casa CM, appartamento in Via Fusco a Modena – immagine 3"
+           data-caption="Casa CM|Appartamento|Via Fusco, Modena, Italia|2022">
+      <img data-src="images/13.webp" class="slide horizontal"
+           alt="Anita, bar e ristorante in Corso Canalgrande a Modena – immagine 5"
+           data-caption="Anita|Bar e ristorante|Corso Canalgrande, Modena, Italia|2025">
+      <img data-src="images/14.webp" class="slide horizontal"
+           alt="Anita, bar e ristorante in Corso Canalgrande a Modena – immagine 6"
+           data-caption="Anita|Bar e ristorante|Corso Canalgrande, Modena, Italia|2025">
+      <img data-src="images/16.webp" class="slide horizontal"
+           alt="Anita, bar e ristorante in Corso Canalgrande a Modena – immagine 7"
+           data-caption="Anita|Bar e ristorante|Corso Canalgrande, Modena, Italia|2025">
     </div>
   </div>
-</div>
-
-<!-- INFO DESKTOP -->
-<div class="info-box">
-  Ricerca e progettazione architettonica,<br> 
-  dal dettaglio costruttivo alla scala urbana.<br>
-  Disegno, realtà virtuale, co-progettazione e <br>
-  ricerca compositiva guidano un metodo fondato <br>
-  su ascolto e chiarezza progettuale. <br><br>
-  Ogni progetto nasce per rispondere con efficacia <br>
-  e innovazione alle sfide dello spazio contemporaneo.<br>
-  Dopo esperienze professionali a Mantova, Berlino e Roma,<br> 
-  lo studio opera oggi a Modena, occupandosi di <br>
-  progettazione e ristrutturazione di appartamenti<br> 
-  e spazi commerciali. <br><br>  
-  L'attività di architetto a Modena si fonda su un approccio <br> 
-  attento al contesto, alla qualità dello spazio e alle esigenze<br> 
-  del cliente. La specializzazione in progettazione in siti storici<br> 
-  e contesti UNESCO consente di affrontare ogni intervento <br>
-  con sensibilità e profondo rispetto per l'esistente.<br><br>
-  <strong>Samuele Silvestri</strong><br>
-  Architetto<br>
-  Modena, Italia<br>
-  arch.samuelesilvestri@gmail.com<br>
-  +39 366 493 8286
 </div>
 
 <!-- INFO MOBILE -->
@@ -336,125 +439,265 @@
     <div class="mobile-data">
       <strong>Samuele Silvestri</strong><br>
       Architetto<br>
-      <div class="extra-info">
+      <address class="extra-info">
         Modena, Italia<br>
-        <a href="mailto:info@samuelesilvestriarchitetto.com" style="color: rgba(0,0,0,0.6); text-decoration: none;">info@samuelesilvestriarchitetto.com</a><br>
-        <a href="tel:+393664938286" style="color: rgba(0,0,0,0.6); text-decoration: none;">+39 366 493 8286</a>
-      </div>
+        <a href="mailto:info@samuelesilvestriarchitetto.com">info@samuelesilvestriarchitetto.com</a><br>
+        <a href="tel:+393664938286">+39 366 493 8286</a>
+      </address>
     </div>
 
     <div class="mobile-caption">
-      <div class="counter-mobile" id="counter-mobile">1</div>
-      <div id="caption-mobile"></div>
+      <div class="counter-mobile" id="counter-mobile">1 / 20</div>
+      <div id="caption-mobile">Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025</div>
     </div>
+  </div>
+
+  <details class="mobile-about">
+    <summary>Lo studio</summary>
+    <div class="mobile-about-text">
+      <p>Ricerca e progettazione architettonica, dal dettaglio costruttivo alla scala urbana.
+        Disegno, realtà virtuale, co-progettazione e ricerca compositiva guidano un metodo fondato
+        su ascolto e chiarezza progettuale.</p>
+      <p>Dopo esperienze professionali a Mantova, Berlino e Roma, lo studio opera oggi a Modena,
+        occupandosi di progettazione e ristrutturazione di appartamenti e spazi commerciali.
+        La specializzazione in progettazione in siti storici e contesti UNESCO consente di affrontare
+        ogni intervento con sensibilità e profondo rispetto per l'esistente.</p>
+      <button type="button" class="cookie-link" data-cookie-settings>Preferenze cookie</button>
+    </div>
+  </details>
+</div>
+
+<!-- BANNER COOKIE: Google Analytics parte solo dopo il consenso -->
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Preferenze cookie" hidden>
+  <p>Questo sito usa Google Analytics, solo con il tuo consenso, per capire in forma aggregata come viene visitato.
+    Puoi cambiare idea in qualsiasi momento da "Preferenze cookie".</p>
+  <div class="cookie-actions">
+    <button type="button" id="cookie-deny">Rifiuta</button>
+    <button type="button" id="cookie-accept">Accetta</button>
   </div>
 </div>
 
 <script>
-  // Adatta l'altezza al viewport reale su mobile (incluso notch/safe areas)
+(function () {
+  'use strict';
+
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Altezza reale del viewport su mobile ---------- */
   function setFullHeight() {
-    const vh = window.innerHeight;
-    document.documentElement.style.setProperty('--app-height', `${vh}px`);
+    document.documentElement.style.setProperty('--app-height', window.innerHeight + 'px');
   }
-  
   setFullHeight();
   window.addEventListener('resize', setFullHeight);
-  window.addEventListener('orientationchange', () => {
-    setTimeout(setFullHeight, 100);
-  });
+  window.addEventListener('orientationchange', function () { setTimeout(setFullHeight, 100); });
 
-  const slides = document.querySelectorAll('.slide');
-  const counter = document.getElementById('counter');
-  const caption = document.getElementById('caption');
+  /* ---------- Intro: parte subito, senza aspettare il download delle immagini ---------- */
+  var intro = document.getElementById('intro');
+  var introText = document.getElementById('intro-text');
 
-  const counterMobile = document.getElementById('counter-mobile');
-  const captionMobile = document.getElementById('caption-mobile');
-
-  const captions = [
-    "Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025",
-    "Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025",
-    "Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025",
-    "Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025",
-    "Cielo - Gennaio 2021<br>Ceramica<br>2026<br>",
-    "Cielo - Gennaio 2021<br>Ceramica<br>2026<br>",
-    "Casalgrande<br>Villa indipendente<br>Reggio Emilia, Italia<br>2026",
-    "Casa AD<br>Appartamento<br>Via Malmusi, Modena, Italia<br>2025<br>con tilde studio",
-    "Casa AD<br>Appartamento<br>Via Malmusi, Modena, Italia<br>2025<br>con tilde studio",
-    "Alberi<br>Titanio<br>2022<br>",
-    "Alberi<br>Titanio<br>2022<br>",
-    "Alberi<br>Titanio<br>2022<br>",
-    "Spazio Persona<br>Concorso<br>Corso Matteotti, Fano, Italia<br>2025",
-    "Spazio Persona<br>Concorso<br>Corso Matteotti, Fano, Italia<br>2025",
-    "Casa CM<br>Appartamento<br>Via Fusco, Modena, Italia<br>2022",
-    "Casa CM<br>Appartamento<br>Via Fusco, Modena, Italia<br>2022",
-    "Casa CM<br>Appartamento<br>Via Fusco, Modena, Italia<br>2022",
-    "Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025",
-    "Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025",
-    "Anita<br>Bar e ristorante<br>Corso Canalgrande, Modena, Italia<br>2025"
-  ];
-
-  let current = 0;
-
-  function showSlide(i){
-    const img = slides[i];
-    if(img.complete){
-      activateSlide(i);
-    } else {
-      img.onload = () => activateSlide(i);
-    }
+  if (reduceMotion) {
+    intro.style.display = 'none';
+  } else {
+    setTimeout(function () { introText.style.opacity = '1'; }, 100);
+    setTimeout(function () {
+      introText.style.opacity = '0';
+      intro.style.opacity = '0';
+    }, 2000);
+    setTimeout(function () { intro.style.display = 'none'; }, 3500);
   }
 
-  function activateSlide(i){
-    slides.forEach(s => s.classList.remove('loaded'));
-    slides[i].classList.add('loaded');
+  /* ---------- Slideshow ---------- */
+  var DURATION = 4000;          // tempo per ogni foto
+  var FIRST_DURATION = 8000;    // la prima resta di più, come prima, perché c'è l'intro
+  var LOAD_TIMEOUT = 15000;     // se un'immagine non arriva entro 15 s, si salta
 
-    // desktop
-    counter.textContent = i + 1;
-    caption.innerHTML = captions[i];
+  var slideshow = document.getElementById('slideshow');
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var total = slides.length;
+  var counters = [document.getElementById('counter'), document.getElementById('counter-mobile')];
+  var captionEls = [document.getElementById('caption'), document.getElementById('caption-mobile')];
 
-    // mobile
-    counterMobile.textContent = i + 1;
-    captionMobile.innerHTML = captions[i];
+  var loaders = [];
+  var current = 0;
+  var timer = null;
+  var navToken = 0;
+
+  // Carica l'immagine i; risolve true se ok, false se errore o troppo lenta
+  function load(i) {
+    if (loaders[i]) return loaders[i];
+    var img = slides[i];
+
+    var loading = new Promise(function (resolve) {
+      img.addEventListener('load', function () { resolve(true); }, { once: true });
+      img.addEventListener('error', function () { resolve(false); }, { once: true });
+
+      if (img.dataset.src && !img.getAttribute('src')) {
+        img.src = img.dataset.src;
+      } else if (img.complete) {
+        resolve(img.naturalWidth > 0);
+      }
+    });
+
+    var timeout = new Promise(function (resolve) {
+      setTimeout(function () { resolve(false); }, LOAD_TIMEOUT);
+    });
+
+    loaders[i] = Promise.race([loading, timeout]).then(function (ok) {
+      if (!ok) loaders[i] = null;   // al giro successivo si riprova
+      return ok;
+    });
+    return loaders[i];
+  }
+
+  // Scrive la didascalia come testo (righe separate da "|"), senza innerHTML
+  function setCaption(el, text) {
+    while (el.firstChild) el.removeChild(el.firstChild);
+    text.split('|').forEach(function (line, k) {
+      if (k > 0) el.appendChild(document.createElement('br'));
+      el.appendChild(document.createTextNode(line));
+    });
+  }
+
+  function render(i) {
+    slides.forEach(function (s, k) {
+      s.classList.toggle('active', k === i);
+      s.setAttribute('aria-hidden', k === i ? 'false' : 'true');
+    });
+
+    var label = (i + 1) + ' / ' + total;
+    counters.forEach(function (el) { if (el) el.textContent = label; });
+
+    var cap = slides[i].dataset.caption || '';
+    captionEls.forEach(function (el) { if (el) setCaption(el, cap); });
 
     current = i;
+    load((i + 1) % total);   // precarica solo la prossima
   }
 
-  function nextSlide(){
-    showSlide((current + 1) % slides.length);
+  function schedule(delay) {
+    clearTimeout(timer);
+    if (document.hidden) return;
+    timer = setTimeout(function () { goTo(current + 1, 1); }, delay || DURATION);
   }
 
-  function startSlideshow() {
-    showSlide(0);
+  // Va alla slide i; se non si carica, prova la successiva nella stessa direzione
+  function goTo(i, dir) {
+    var token = ++navToken;
+    clearTimeout(timer);
+    dir = dir || 1;
+    i = ((i % total) + total) % total;
 
-    setTimeout(() => {
-      setInterval(nextSlide, 4000);
-    }, 4000);
+    var tries = 0;
+    function attempt() {
+      load(i).then(function (ok) {
+        if (token !== navToken) return;   // nel frattempo l'utente ha già cambiato foto
+        if (ok) {
+          render(i);
+          schedule();
+        } else if (++tries < total) {
+          i = (i + dir + total) % total;
+          attempt();
+        }
+      });
+    }
+    attempt();
   }
 
-  window.addEventListener('load', startSlideshow);
+  function next() { goTo(current + 1, 1); }
+  function prev() { goTo(current - 1, -1); }
 
-  slides.forEach(slide => {
-    slide.addEventListener('contextmenu', e => e.preventDefault());
+  // Click: metà destra avanti, metà sinistra indietro
+  var touchMoved = false;
+  slideshow.addEventListener('click', function (e) {
+    if (touchMoved) { touchMoved = false; return; }
+    var rect = slideshow.getBoundingClientRect();
+    if (e.clientX - rect.left < rect.width / 2) prev(); else next();
   });
-</script>
-<script>
-  window.addEventListener('load', () => {
-  const intro = document.getElementById('intro');
-  const text = document.getElementById('intro-text');
 
-  setTimeout(() => {
-    text.style.opacity = '1';
-  }, 100);
+  // Frecce da tastiera
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') next();
+    else if (e.key === 'ArrowLeft') prev();
+  });
 
-  setTimeout(() => {
-    text.style.opacity = '0';
-    intro.style.opacity = '0';
-  }, 2000);
+  // Swipe su mobile
+  var touchX = null;
+  slideshow.addEventListener('touchstart', function (e) {
+    touchX = e.touches[0].clientX;
+    touchMoved = false;
+  }, { passive: true });
+  slideshow.addEventListener('touchend', function (e) {
+    if (touchX === null) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    touchX = null;
+    if (Math.abs(dx) > 40) {
+      touchMoved = true;
+      if (dx < 0) next(); else prev();
+    }
+  }, { passive: true });
 
-  setTimeout(() => {
-    intro.style.display = 'none';
-  }, 3500);
-});
+  // Pausa quando la scheda non è visibile
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) clearTimeout(timer); else schedule();
+  });
+
+  // Avvio: la prima foto è già nell'HTML, si precarica la seconda
+  render(0);
+  load(0).then(function () { schedule(FIRST_DURATION); });
+
+  /* ---------- Consenso cookie e Google Analytics ---------- */
+  var GA_ID = 'G-FW1ER2Y7QD';
+  var STORAGE_KEY = 'cookie-consent';
+  var banner = document.getElementById('cookie-banner');
+  var gaLoaded = false;
+
+  function readConsent() {
+    try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+  }
+  function saveConsent(value) {
+    try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
+  }
+
+  function loadGA() {
+    if (gaLoaded) return;
+    gaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
+  }
+
+  function disableGA() {
+    // Blocca l'invio di ulteriori dati se il consenso viene revocato durante la visita
+    window['ga-disable-' + GA_ID] = true;
+  }
+
+  document.getElementById('cookie-accept').addEventListener('click', function () {
+    saveConsent('granted');
+    window['ga-disable-' + GA_ID] = false;
+    banner.hidden = true;
+    loadGA();
+  });
+
+  document.getElementById('cookie-deny').addEventListener('click', function () {
+    saveConsent('denied');
+    banner.hidden = true;
+    disableGA();
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-cookie-settings]'), function (btn) {
+    btn.addEventListener('click', function () { banner.hidden = false; });
+  });
+
+  var consent = readConsent();
+  if (consent === 'granted') loadGA();
+  else if (consent !== 'denied') banner.hidden = false;
+})();
 </script>
 
 </body>
