@@ -192,6 +192,8 @@ address .legal { display: block; margin-top: 0.7em; }
 .site-nav a { color: #000; }
 .site-nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 3px; }
 .info-box .site-nav { margin: 0 0 1.4em; }
+.site-nav .langs { display: flex; flex-wrap: wrap; gap: 4px 14px; flex-basis: 100%; }
+.page-side .site-nav .langs { flex-direction: column; gap: 6px; margin-top: 10px; }
 .related { margin: 0 0 1.4em; }
 .related a { color: #000; }
 
@@ -434,6 +436,7 @@ body.text-page {
     gap: 10px;
   }
   .page-side .site-nav { flex-direction: row; gap: 4px 14px; }
+  .page-side .site-nav .langs { flex-direction: row; gap: 4px 14px; margin-top: 0; }
   .page-main { padding: 28px 18px 0; }
   .page-foot { padding: 48px 18px calc(24px + env(safe-area-inset-bottom)); }
   .figs, .figs-index { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
