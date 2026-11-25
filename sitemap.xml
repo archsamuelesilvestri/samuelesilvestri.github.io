@@ -1,35 +1,395 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://samuelesilvestriarchitetto.com/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-scultura-basamento-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-bancone-onice-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-volume-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-schizzo-pianta-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-soggiorno-cucina-verde-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/cielo-gioielli-ceramica-cielo-gennaio-2021-1179.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/cielo-gioiello-ceramica-cubo-azzurro-2028.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-ingresso-terracotta-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casalgrande-villa-bagno-pareti-verdi-674.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-attico-zona-giorno-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-ad-appartamento-modena-bagno-vasca-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-ad-appartamento-modena-bagno-lavabo-sospeso-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-corridoio-colonne-rosse-1200.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioielli-titanio-studio-corteccia-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioiello-titanio-cubo-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioiello-titanio-superficie-corteccia-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-bagno-terracotta-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/spazio-persona-fano-schizzo-pianta-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/spazio-persona-fano-interno-pareti-legno-1500.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/spazio-persona-fano-scaffalature-legno-soffitto-travi-1500.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-cucina-grigio-scuro-1080.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-parete-scura-cornici-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-schizzo-pianta-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-sala-scultura-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-sala-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-bancone-onice-dettaglio-2400.webp</image:loc></image:image>
   </url>
   <url>
-    <loc>https://samuelesilvestriarchitetto.com/progetti/anita.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://samuelesilvestriarchitetto.com/progetti.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-soggiorno-cucina-verde-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-ingresso-terracotta-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casalgrande-villa-bagno-pareti-verdi-674.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-scultura-basamento-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-ad-appartamento-modena-bagno-vasca-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/spazio-persona-fano-schizzo-pianta-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-cucina-grigio-scuro-1080.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/cielo-gioielli-ceramica-cielo-gennaio-2021-1179.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioielli-titanio-studio-corteccia-1600.webp</image:loc></image:image>
   </url>
   <url>
-    <loc>https://samuelesilvestriarchitetto.com/progetti/cielo.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://samuelesilvestriarchitetto.com/progetti/le-pietre.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/le-pietre.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/le-pietre.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/le-pietre.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-soggiorno-cucina-verde-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-attico-zona-giorno-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-bagno-terracotta-2000.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/progetti/via-carteria.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/via-carteria.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/via-carteria.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/via-carteria.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-ingresso-terracotta-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-corridoio-colonne-rosse-1200.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://samuelesilvestriarchitetto.com/progetti/casalgrande.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/casalgrande.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/casalgrande.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/casalgrande.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casalgrande-villa-bagno-pareti-verdi-674.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/progetti/anita.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/anita.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/anita.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/anita.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-scultura-basamento-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-bancone-onice-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-volume-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-schizzo-pianta-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-sala-scultura-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-sala-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-bancone-onice-dettaglio-2400.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://samuelesilvestriarchitetto.com/progetti/casa-ad.html</loc>
-    <lastmod>2026-11-11</lastmod>
-  </url>
-  <url>
-    <loc>https://samuelesilvestriarchitetto.com/progetti/alberi.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/casa-ad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/casa-ad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/casa-ad.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-ad-appartamento-modena-bagno-vasca-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-ad-appartamento-modena-bagno-lavabo-sospeso-1600.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://samuelesilvestriarchitetto.com/progetti/spazio-persona.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/spazio-persona.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/spazio-persona.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/spazio-persona.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/spazio-persona-fano-schizzo-pianta-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/spazio-persona-fano-interno-pareti-legno-1500.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/spazio-persona-fano-scaffalature-legno-soffitto-travi-1500.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://samuelesilvestriarchitetto.com/progetti/casa-cm.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/casa-cm.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/casa-cm.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/casa-cm.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-cucina-grigio-scuro-1080.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-parete-scura-cornici-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-schizzo-pianta-2000.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/progetti/cielo.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/cielo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/cielo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/cielo.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/cielo-gioielli-ceramica-cielo-gennaio-2021-1179.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/cielo-gioiello-ceramica-cubo-azzurro-2028.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/progetti/alberi.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/alberi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/alberi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/alberi.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioielli-titanio-studio-corteccia-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioiello-titanio-cubo-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioiello-titanio-superficie-corteccia-1600.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/studio.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/studio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/studio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/studio.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-corridoio-colonne-rosse-1200.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-bancone-onice-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-soggiorno-cucina-verde-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioiello-titanio-superficie-corteccia-1600.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/servizi.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/servizi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/servizi.html"/>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/en/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-scultura-basamento-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-bancone-onice-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-volume-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-schizzo-pianta-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-soggiorno-cucina-verde-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/cielo-gioielli-ceramica-cielo-gennaio-2021-1179.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/cielo-gioiello-ceramica-cubo-azzurro-2028.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-ingresso-terracotta-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casalgrande-villa-bagno-pareti-verdi-674.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-attico-zona-giorno-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-ad-appartamento-modena-bagno-vasca-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-ad-appartamento-modena-bagno-lavabo-sospeso-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-corridoio-colonne-rosse-1200.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioielli-titanio-studio-corteccia-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioiello-titanio-cubo-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioiello-titanio-superficie-corteccia-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-bagno-terracotta-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/spazio-persona-fano-schizzo-pianta-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/spazio-persona-fano-interno-pareti-legno-1500.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/spazio-persona-fano-scaffalature-legno-soffitto-travi-1500.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-cucina-grigio-scuro-1080.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-parete-scura-cornici-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-schizzo-pianta-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-sala-scultura-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-sala-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-bancone-onice-dettaglio-2400.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/en/projects.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-soggiorno-cucina-verde-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-ingresso-terracotta-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casalgrande-villa-bagno-pareti-verdi-674.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-scultura-basamento-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-ad-appartamento-modena-bagno-vasca-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/spazio-persona-fano-schizzo-pianta-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-cucina-grigio-scuro-1080.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/cielo-gioielli-ceramica-cielo-gennaio-2021-1179.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioielli-titanio-studio-corteccia-1600.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/en/projects/le-pietre.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/le-pietre.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/le-pietre.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/le-pietre.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-soggiorno-cucina-verde-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-attico-zona-giorno-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-bagno-terracotta-2000.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/en/projects/via-carteria.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/via-carteria.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/via-carteria.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/via-carteria.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-ingresso-terracotta-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-corridoio-colonne-rosse-1200.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/en/projects/casalgrande.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/casalgrande.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/casalgrande.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/casalgrande.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casalgrande-villa-bagno-pareti-verdi-674.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/en/projects/anita.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/anita.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/anita.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/anita.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-scultura-basamento-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-bancone-onice-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-volume-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-schizzo-pianta-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-sala-scultura-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-sala-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-bancone-onice-dettaglio-2400.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/en/projects/casa-ad.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/casa-ad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/casa-ad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/casa-ad.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-ad-appartamento-modena-bagno-vasca-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-ad-appartamento-modena-bagno-lavabo-sospeso-1600.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/en/projects/spazio-persona.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/spazio-persona.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/spazio-persona.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/spazio-persona.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/spazio-persona-fano-schizzo-pianta-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/spazio-persona-fano-interno-pareti-legno-1500.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/spazio-persona-fano-scaffalature-legno-soffitto-travi-1500.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/en/projects/casa-cm.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/casa-cm.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/casa-cm.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/casa-cm.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-cucina-grigio-scuro-1080.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-parete-scura-cornici-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-schizzo-pianta-2000.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/en/projects/cielo.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/cielo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/cielo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/cielo.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/cielo-gioielli-ceramica-cielo-gennaio-2021-1179.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/cielo-gioiello-ceramica-cubo-azzurro-2028.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/en/projects/alberi.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/progetti/alberi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/projects/alberi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/progetti/alberi.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioielli-titanio-studio-corteccia-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioiello-titanio-cubo-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioiello-titanio-superficie-corteccia-1600.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/en/studio.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/studio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/studio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/studio.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-corridoio-colonne-rosse-1200.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-bancone-onice-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-soggiorno-cucina-verde-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/alberi-gioiello-titanio-superficie-corteccia-1600.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/en/services.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://samuelesilvestriarchitetto.com/servizi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://samuelesilvestriarchitetto.com/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samuelesilvestriarchitetto.com/servizi.html"/>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-corridoio-colonne-rosse-1200.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-bancone-onice-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-scultura-basamento-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-attico-zona-giorno-2000.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/servizi/ristrutturazione-appartamenti.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-corridoio-colonne-rosse-1200.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-ingresso-terracotta-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-ad-appartamento-modena-bagno-vasca-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-cucina-grigio-scuro-1080.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/servizi/locali-commerciali.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-bancone-onice-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-bancone-onice-dettaglio-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-volume-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-sala-onice-1600.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/servizi/centri-storici-unesco.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-corridoio-colonne-rosse-1200.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-scultura-basamento-onice-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-sala-scultura-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-volume-onice-1600.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/servizi/interni-arredi-su-misura.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-soggiorno-cucina-verde-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-ingresso-terracotta-2400.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-cucina-grigio-scuro-1080.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-bancone-onice-dettaglio-2400.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/servizi/pratiche-edilizie-direzione-lavori.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-ad-appartamento-modena-bagno-vasca-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-ad-appartamento-modena-bagno-lavabo-sospeso-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casa-cm-appartamento-modena-cucina-grigio-scuro-1080.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-bancone-onice-2400.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/servizi/render-realta-virtuale.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-attico-zona-giorno-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-corridoio-colonne-rosse-1200.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/casalgrande-villa-bagno-pareti-verdi-674.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/spazio-persona-fano-interno-pareti-legno-1500.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/articoli.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-corridoio-colonne-rosse-1200.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-soggiorno-cucina-verde-2000.webp</image:loc></image:image>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-scultura-basamento-onice-1600.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/articoli/ristrutturare-casa-centro-storico-modena.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/via-carteria-modena-corridoio-colonne-rosse-1200.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/articoli/render-realta-virtuale-vedere-casa-prima-dei-lavori.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/le-pietre-castelfranco-emilia-soggiorno-cucina-verde-2000.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/articoli/progettare-contesto-storico-citta-spazio-domestico.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image><image:loc>https://samuelesilvestriarchitetto.com/images/r/anita-bar-ristorante-modena-scultura-basamento-onice-1600.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://samuelesilvestriarchitetto.com/privacy.html</loc>
+    <lastmod>2026-11-25</lastmod>
   </url>
 </urlset>

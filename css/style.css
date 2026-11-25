@@ -63,7 +63,8 @@ a:hover, a:focus-visible { text-decoration: underline; }
 /* ================= LAYOUT DESKTOP ================= */
 .layout {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  /* colonna larga quanto il riquadro dei testi: testo e foto non si sovrappongono */
+  grid-template-columns: 400px 1fr;
   flex: 1;
   min-height: 0;
   overflow: hidden;
@@ -96,14 +97,21 @@ a:hover, a:focus-visible { text-decoration: underline; }
 .info-box {
   margin-top: auto;
   padding-top: 24px;
-  width: 350px;
+  width: 100%;
   font-size: 10pt;
   color: var(--muted);
   line-height: 1.4;
+  /* su schermi bassi i testi lunghi scorrono dentro il riquadro invece di uscire dallo schermo */
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 .info-box p { margin: 0 0 1.4em; }
+.info-box p a,
+.mobile-about-text p a { color: #000; }
 address { font-style: normal; }
+address .legal { display: block; margin-top: 0.7em; }
 
 .project-nav {
   margin: 0 0 1.4em;
@@ -165,7 +173,19 @@ address { font-style: normal; }
 
 .mobile-info-wrapper { display: none; }
 
-/* ================= PAGINE DI TESTO (privacy, 404) ================= */
+/* ================= NAVIGAZIONE ================= */
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+.site-nav a { color: #000; }
+.site-nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 3px; }
+.info-box .site-nav { margin: 0 0 1.4em; }
+.related { margin: 0 0 1.4em; }
+.related a { color: #000; }
+
+/* ================= PAGINE DI TESTO (studio, servizi, progetti, privacy) ================= */
 body.text-page {
   height: auto;
   min-height: 100%;
@@ -173,30 +193,148 @@ body.text-page {
   display: block;
 }
 
-.text-page main {
-  max-width: 640px;
+.page {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+.page-side {
+  grid-row: 1 / span 2;
   padding: 40px;
+}
+
+.page-side-inner {
+  position: sticky;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.page-side .site-nav {
+  flex-direction: column;
+  gap: 6px;
   font-size: 10pt;
-  line-height: 1.5;
+}
+
+.brand { color: #000; }
+.brand:hover, .brand:focus-visible { text-decoration: none; }
+
+.page-main,
+.page-foot {
+  max-width: 760px;
+  padding: 40px 40px 0 10px;
+  font-size: 10pt;
+  line-height: 1.55;
   color: var(--muted);
 }
 
-.text-page h1 {
+.page-foot {
+  padding-top: 64px;
+  padding-bottom: 40px;
+  line-height: 1.4;
+}
+
+.page-main h1 {
   font-size: 14px;
   font-weight: normal;
   letter-spacing: 1px;
   color: #000;
   margin: 0 0 24px;
+  text-wrap: balance;
 }
 
-.text-page h2 {
+.page-main h2 {
   font-size: 10pt;
   font-weight: bold;
   color: #000;
-  margin: 2em 0 0.5em;
+  margin: 2.4em 0 0.6em;
 }
 
-.text-page .back { display: inline-block; margin-bottom: 32px; color: #000; }
+.page-main h3 {
+  font-size: 10pt;
+  font-weight: normal;
+  color: #000;
+  margin: 1.4em 0 0.3em;
+}
+
+.page-main p,
+.page-main ul,
+.page-main ol { margin: 0 0 1em; max-width: 62ch; }
+.page-main ul, .page-main ol { padding-left: 1.2em; }
+.page-main li { margin-bottom: 0.35em; }
+.page-main .lead { color: #000; }
+
+.page-main a,
+.page-foot a {
+  color: #000;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.25);
+  text-underline-offset: 2px;
+}
+.page-main a:hover, .page-main a:focus-visible,
+.page-foot a:hover, .page-foot a:focus-visible { text-decoration-color: #000; }
+
+.breadcrumb { font-size: 9pt; margin-bottom: 20px !important; }
+
+.service-list { list-style: none; padding: 0 !important; display: grid; gap: 18px; margin-top: 1.6em !important; }
+.service-list a { text-decoration: none; }
+
+.foot-links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 1.4em 0 0; }
+.foot-links .cookie-link { margin-top: 0; }
+
+.cta {
+  margin-top: 3em;
+  padding-top: 0.2em;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* Miniature dei progetti */
+.figs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px 16px;
+  margin: 16px 0 8px;
+}
+
+.fig { margin: 0; }
+.fig a { display: block; color: inherit; text-decoration: none; }
+.fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #f1f1ef;
+}
+.fig figcaption {
+  margin-top: 8px;
+  font-size: 9pt;
+  line-height: 1.35;
+  color: var(--muted);
+}
+.fig a:hover figcaption, .fig a:focus-visible figcaption { color: #000; }
+.fig strong { color: #000; font-weight: normal; }
+
+.figs-index { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 32px 20px; }
+
+/* Articoli */
+.figs-articles { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 36px 20px; }
+.figs-articles .fig img { aspect-ratio: 4 / 3; }
+.figs-articles .fig figcaption { font-size: 10pt; line-height: 1.45; }
+.byline { font-size: 9pt; margin: -12px 0 24px !important; }
+.hero { margin: 0 0 28px; }
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: cover;
+  background: #f1f1ef;
+}
+.also { list-style: none; padding: 0 !important; display: grid; gap: 8px; }
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
@@ -277,7 +415,19 @@ body.text-page {
   .mobile-about-text p { margin: 0 0 1em; }
   .mobile-about-text .project-nav { margin-bottom: 1em; }
 
-  .text-page main { padding: 24px 18px; }
+  .mobile-nav { font-size: 11px; }
+
+  .page { display: block; min-height: 0; }
+  .page-side { padding: 18px 18px 0; }
+  .page-side-inner {
+    position: static;
+    gap: 10px;
+  }
+  .page-side .site-nav { flex-direction: row; gap: 4px 14px; }
+  .page-main { padding: 28px 18px 0; }
+  .page-foot { padding: 48px 18px calc(24px + env(safe-area-inset-bottom)); }
+  .figs, .figs-index { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
+  .figs-articles { grid-template-columns: minmax(0, 1fr); gap: 28px; }
 }
 
 /* ================= BANNER COOKIE ================= */

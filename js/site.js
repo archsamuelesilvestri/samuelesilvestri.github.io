@@ -61,6 +61,8 @@
         img.addEventListener('load', function () { resolve(true); }, { once: true });
         img.addEventListener('error', function () { resolve(false); }, { once: true });
         if (img.dataset.src && !img.getAttribute('src')) {
+          // prima srcset, poi src: il browser sceglie subito la misura giusta
+          if (img.dataset.srcset) img.srcset = img.dataset.srcset;
           img.src = img.dataset.src;
         } else if (img.complete) {
           resolve(img.naturalWidth > 0);
