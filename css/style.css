@@ -172,6 +172,15 @@ address .legal { display: block; margin-top: 0.7em; }
 .slide.horizontal { object-position: right top; }
 .slide.active { opacity: 1; }
 
+/* Disegni da mostrare più piccoli su desktop, in alto a destra come le altre immagini */
+@media (min-width: 769px) {
+  .slide.slide-small {
+    inset: 0 0 auto auto;
+    width: 60%;
+    height: 60%;
+  }
+}
+
 .mobile-info-wrapper { display: none; }
 
 /* ================= NAVIGAZIONE ================= */
