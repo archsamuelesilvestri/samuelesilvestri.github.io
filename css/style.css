@@ -131,6 +131,7 @@ address .legal { display: block; margin-top: 0.7em; }
   cursor: pointer;
 }
 .cookie-link:hover, .cookie-link:focus-visible { text-decoration: underline; }
+.privacy-link { display: inline-block; margin-top: 1.4em; }
 
 /* Schermi desktop bassi: si nascondono i paragrafi secondari (restano nel codice per Google) */
 @media (min-width: 769px) and (max-height: 720px) {
