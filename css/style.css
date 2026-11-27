@@ -485,7 +485,7 @@ body.text-page {
   .slide, #intro, #intro-text { transition: none; }
 }
 
-/* ================= HOME (titolo, testo, galleria, servizi, contatto) ================= */
+/* ================= HOME (schermata unica: galleria a destra, testi a sinistra) ================= */
 body.home {
   height: auto;
   min-height: 100%;
@@ -494,7 +494,7 @@ body.home {
 }
 
 .home-head h1 {
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   font-size: 14px;
   font-weight: normal;
   letter-spacing: 1px;
@@ -505,31 +505,24 @@ body.home {
 
 .home-caption { font-size: 12px; color: #666; }
 
-.home-intro { font-size: 10pt; line-height: 1.4; color: var(--muted); }
-.home-intro p { margin: 0 0 1.4em; max-width: 62ch; }
-.home-intro a { color: #000; }
+.home-intro,
+.home-services,
+.home-cta,
+.home-legal { font-size: 10pt; line-height: 1.4; color: var(--muted); }
+.home-intro p { margin: 0 0 1em; max-width: 62ch; }
+.home-intro p:last-child { margin-bottom: 0; }
+.home-intro a,
+.home-cta a { color: #000; }
 
-.home-row h2 { margin: 0; font-size: 10pt; font-weight: bold; line-height: 1.4; color: #000; }
-.home-row p { margin: 0 0 0.6em; font-size: 10pt; line-height: 1.4; color: var(--muted); max-width: 62ch; }
+.home-services ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.home-services h3 { margin: 0; font-size: 10pt; font-weight: normal; color: #000; }
+.home-services p { margin: 0; }
 
-.home-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.home-card { display: block; color: inherit; }
-.home-card:hover, .home-card:focus-visible { text-decoration: none; }
-.home-card img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  background: #f1f1ef;
-}
-.home-card img.drawing { object-fit: contain; background: #fff; }
-.home-card h3 { margin: 10px 0 2px; font-size: 10pt; font-weight: normal; line-height: 1.4; color: #000; }
-.home-card:hover h3, .home-card:focus-visible h3 { text-decoration: underline; text-underline-offset: 2px; }
-.home-cta-link { color: #000; }
-.home-cta p { max-width: none; }
+.home-cta h2 { margin: 0; font-size: 10pt; font-weight: normal; color: #000; }
+.home-cta p { margin: 0; }
 
-.home-foot { font-size: 10pt; line-height: 1.4; color: var(--muted); }
+.home-legal p { margin: 0; }
+.home-legal .privacy-link { margin-top: 0.6em; }
 
 /* Pagina Contatti */
 .contact-list { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 24px; margin: 0 0 1.4em; }
@@ -539,40 +532,38 @@ body.home {
 @media (min-width: 769px) {
   .home-grid {
     display: grid;
-    grid-template-columns: 400px minmax(0, 1fr);
-    grid-template-rows: auto auto 1fr auto auto auto auto auto;
+    grid-template-columns: 440px minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto auto auto auto auto auto;
     grid-template-areas:
-      "head     gallery"
       "caption  gallery"
-      "intro    gallery"
+      ".        gallery"
+      "head     gallery"
       "nav      gallery"
-      "services services"
-      "cta      cta"
-      "foot     foot";
+      "intro    gallery"
+      "services gallery"
+      "cta      gallery"
+      "legal    gallery";
+    min-height: 100vh;
+    min-height: 100svh;
   }
-  .home-head { grid-area: head; padding: 40px 40px 0; }
-  .home-caption { grid-area: caption; padding: 32px 40px 0; }
-  .home-intro { grid-area: intro; align-self: end; padding: 32px 40px 0; }
-  .home-nav { grid-area: nav; padding: 0 40px 40px; font-size: 10pt; }
+  .home-caption { grid-area: caption; padding: 40px 40px 0; }
+  .home-head { grid-area: head; padding: 28px 40px 0; }
+  .home-intro { grid-area: intro; padding: 20px 40px 0; }
+  .home-services { grid-area: services; padding: 16px 40px 0; }
+  .home-cta { grid-area: cta; padding: 16px 40px 0; }
+  .home-nav { grid-area: nav; padding: 16px 40px 0; font-size: 10pt; }
+  .home-legal { grid-area: legal; padding: 16px 40px 40px; }
+  /* la foto resta ferma se il testo è più alto dello schermo */
   .home-gallery {
     grid-area: gallery;
     align-self: start;
+    position: sticky;
+    top: 0;
     height: 100vh;
     height: 100svh;
   }
   .home-gallery .slideshow-wrapper { height: 100%; }
   .home-mobile-top { display: none; }
-
-  .home-row {
-    display: grid;
-    grid-template-columns: 400px minmax(0, 1fr);
-    padding-right: 40px;
-  }
-  .home-row > :first-child { padding: 0 40px; }
-  .home-row > :nth-child(2) { padding-left: 10px; }
-  .home-services { grid-area: services; padding-top: 96px; }
-  .home-cta { grid-area: cta; padding-top: 96px; }
-  .home-foot { grid-area: foot; padding-top: 96px; padding-bottom: 40px; }
 }
 
 @media (max-width: 768px) {
@@ -588,10 +579,8 @@ body.home {
   .home-gallery .slideshow-wrapper { height: 100%; padding: 12px 18px; }
   .home-mobile-top { padding: 4px 18px 0; }
   .home-nav { padding: 12px 18px 0; font-size: 11px; }
-  .home-intro { padding: 40px 18px 0; line-height: 1.55; }
-  .home-intro p { margin-bottom: 1em; }
-  .home-row { padding: 44px 18px 0; }
-  .home-row h2 { margin-bottom: 14px; }
-  .home-cards { grid-template-columns: minmax(0, 1fr); gap: 28px; }
-  .home-foot { padding-bottom: calc(28px + env(safe-area-inset-bottom)); font-size: 11px; }
+  .home-intro { padding: 36px 18px 0; line-height: 1.55; }
+  .home-services { padding: 24px 18px 0; }
+  .home-cta { padding: 24px 18px 0; }
+  .home-legal { padding: 28px 18px calc(24px + env(safe-area-inset-bottom)); font-size: 11px; }
 }
